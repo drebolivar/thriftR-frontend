@@ -1,11 +1,57 @@
-# thriftR-frontend
+# thriftR
 
-## Component Hierarchy Diagram
+## Date: 08/11/22
 
-[Trello](https://trello.com/b/y6oG2JhY/thriftr)
+# By: Andres Bolivar, Alex Campo, nd Shannon Quinn
 
-![Image](/assets/Screen%20Shot%202022-08-11%20at%2012.42.47%20PM.png)
+Dre - [Instagram](http://www.instagram.com/dredose) | [LinkedIn](http://www.linkedin.com/in/drebolivar) | [Github](http://www.github.com/drebolivar) |
 
-![wireframe](https://user-images.githubusercontent.com/107195049/184223709-e6f0927b-30f7-4d22-8d32-d8b49cb81a3e.png)
+Alex - 
 
+Shannon - 
+---
 
+# Description
+
+A social media site to peruse the preused
+
+---
+
+# Technologies Used
+
+- CSS
+- HTML
+- Javascript
+- Express
+- NodeJS
+- Postgres
+- React
+
+---
+
+# Resources
+
+- [GitHub](https://github.com/drebolivar/Nostalgia_Game)
+- [Trello](http://trello.com/b/0vZOQpqf/nostalgia-game)
+
+---
+
+# Task Lists
+
+- [x] Finalize Name
+- [x] Create Trello Board
+- [x] Commit GitHub repository
+- [ ] Create assets
+- [ ] Determine Aesthetic
+
+# Stretch Goals
+
+- [ ] Marketplw
+- [ ] 
+
+---
+# Screenshots
+
+![Image]()
+
+---
