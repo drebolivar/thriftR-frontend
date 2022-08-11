@@ -4,11 +4,11 @@
 
 # By: Andres Bolivar, Alex Campo, nd Shannon Quinn
 
-Dre[Instagram](http://www.instagram.com/dredose) | [LinkedIn](http://www.linkedin.com/in/drebolivar) | [Github](http://www.github.com/drebolivar) |
+Dre - [Instagram](http://www.instagram.com/dredose) | [LinkedIn](http://www.linkedin.com/in/drebolivar) | [Github](http://www.github.com/drebolivar) |
 
-Alex
+Alex - 
 
-Shannon
+Shannon - 
 ---
 
 # Description
@@ -52,6 +52,6 @@ A social media site to peruse the preused
 ---
 # Screenshots
 
-![Image](https://www.zocalopublicsquare.org/wp-content/uploads/2022/02/nostalgia-L.jpg)
+![Image]()
 
 ---
