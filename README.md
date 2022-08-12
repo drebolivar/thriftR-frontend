@@ -6,9 +6,9 @@
 
 Dre - [Instagram](http://www.instagram.com/dredose) | [LinkedIn](http://www.linkedin.com/in/drebolivar) | [Github](http://www.github.com/drebolivar) |
 
-Alex - [LinkedIn](https://www.linkedin.com/in/alexcampo5) | [GitHub](https://github.com/alexcampo5)
+Alex - 
 
-Shannon - 
+Shannon - [Instagram](https://www.instagram.com/shannon.rylee/) | [LinkedIn](https://www.linkedin.com/in/shannon-rylee/) | [Github](https://github.com/shannonrylee)
 ---
 
 # Description
