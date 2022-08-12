@@ -8,7 +8,7 @@ Dre - [Instagram](http://www.instagram.com/dredose) | [LinkedIn](http://www.link
 
 Alex - 
 
-## Shannon - [Instagram](https://www.instagram.com/shannon.rylee/) | [LinkedIn](https://www.linkedin.com/in/shannon-rylee/) | [Github](https://github.com/shannonrylee)
+### Shannon - [Instagram](https://www.instagram.com/shannon.rylee/) | [LinkedIn](https://www.linkedin.com/in/shannon-rylee/) | [Github](https://github.com/shannonrylee)
 ---
 
 # Description
