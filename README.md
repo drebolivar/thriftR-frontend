@@ -52,6 +52,6 @@ A social media site to peruse the preused
 ---
 # Screenshots
 
-![Image](/repository/assets/thriftrlogo.png?raw=true)
+![Employee data](/repository/assets/thriftrlogo.png?raw=true)
 
 ---
