@@ -2,11 +2,11 @@
 
 ## Date: 08/11/22
 
-# By: Andres Bolivar, Alex Campo, nd Shannon Quinn
+# By: Andres Bolivar, Alex Campo, and Shannon Quinn
 
 Dre - [Instagram](http://www.instagram.com/dredose) | [LinkedIn](http://www.linkedin.com/in/drebolivar) | [Github](http://www.github.com/drebolivar) |
 
-Alex - 
+Alex - [LinkedIn](https://www.linkedin.com/in/alexcampo5) | [GitHub](https://github.com/alexcampo5)
 
 Shannon - 
 ---
