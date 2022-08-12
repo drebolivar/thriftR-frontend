@@ -46,7 +46,7 @@ A social media site to peruse the preused
 
 # Stretch Goals
 
-- [ ] Marketplw
+- [ ] Marketplace
 - [ ] 
 
 ---
