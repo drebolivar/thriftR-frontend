@@ -32,8 +32,9 @@ A social media site to peruse the preused
 
 # Resources
 
-- [GitHub](https://github.com/drebolivar/Nostalgia_Game)
-- [Trello](http://trello.com/b/0vZOQpqf/nostalgia-game)
+- [GitHub](https://github.com/drebolivar/thriftR-frontend)
+- 
+- [Trello](https://trello.com/b/y6oG2JhY/thriftr)
 
 ---
 
