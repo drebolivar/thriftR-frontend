@@ -1,4 +1,5 @@
 # thriftR
+![Image](https://i.imgur.com/rXY2NSD.png)
 
 ## Date: 08/11/22
 
@@ -52,6 +53,6 @@ A social media site to peruse the preused
 ---
 # Screenshots
 
-![Employee data](/repository/assets/thriftrlogo.png?raw=true)
+![Image](https://i.imgur.com/xyRphr0.png))
 
 ---
