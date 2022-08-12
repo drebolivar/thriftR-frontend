@@ -53,6 +53,7 @@ A social media site to peruse the preused
 ---
 # Screenshots
 
-![Image](https://i.imgur.com/xyRphr0.png))
+![Image](https://i.imgur.com/xyRphr0.png)
+![Image](https://i.imgur.com/74igJK0.png)
 
 ---
