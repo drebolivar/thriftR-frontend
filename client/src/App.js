@@ -12,7 +12,7 @@ import { BASE_URL } from './services/api'
 import axios from 'axios'
 
 function App() {
-  const [signedIn, setSignIn] = useState(true)
+  const [signedIn, setSignIn] = useState(false)
   const [allPosts, setAllPosts] = useState(null)
   const [user, setUser] = useState({
     username: '',
@@ -38,11 +38,7 @@ function App() {
     getAllPosts()
   }, [])
 
-  const getLogin = async () => {
-    const res = await axios.get('${BASE_URL}/auth/login')
-    console.log(res.data)
-    setLogin(res.data)
-  }
+
 
   return (
     <div className="App">
