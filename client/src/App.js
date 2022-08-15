@@ -23,6 +23,7 @@ function App() {
   const getUser = async () => {
     const res = await axios.get(BASE_URL)
     console.log(res)
+    //setUser(res)
   }
 
   // useEffect(() => {
@@ -37,7 +38,7 @@ function App() {
         <Route path="/" element={<Feed user={user} />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile user={user} />} />
+        <Route path="/profile/:id" element={<Profile user={user} />} />
       </Routes>
     </div>
   )

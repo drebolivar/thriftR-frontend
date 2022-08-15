@@ -1,10 +1,16 @@
 import PostCard from '../components/PostCard'
 
-export default function Feed() {
+export default function Feed(props) {
   return (
     <nav>
       <h1>I am the Feed</h1>
-      <PostCard />
+      <section>
+        {/* {props.posts.map((currentPlayer) => (
+          <div key={props.posts.id} className="posts"> */}
+        <PostCard />
+        {/* </div>
+        ))} */}
+      </section>
     </nav>
   )
 }
