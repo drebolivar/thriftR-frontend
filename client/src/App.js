@@ -10,10 +10,13 @@ import SignIn from './pages/SignIn'
 import Client from './services/api'
 import { BASE_URL } from './services/api'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function App() {
+  let navigate = useNavigate()
   const [signedIn, setSignIn] = useState(false)
   const [allPosts, setAllPosts] = useState(null)
+  const [allUserPosts, setAllUserPosts] = useState([])
   const [user, setUser] = useState({
     username: '',
     profilePicture: '',
@@ -33,22 +36,30 @@ function App() {
     setAllPosts(res.data)
   }
 
+  const getUserPosts = async () => {
+    const res = await axios.get(`${BASE_URL}/feed/profile/1`)
+    console.log(res.data)
+    setAllUserPosts(res.data)
+    console.log(allUserPosts)
+  }
+
   useEffect(() => {
     getUser()
     getAllPosts()
+    getUserPosts()
   }, [])
 
-
+  console.log(allUserPosts)
 
   return (
     <div className="App">
-      <Nav signedIn={signedIn} />
+      <Nav signedIn={signedIn} userId={user.id} />
       <img src={logo} alt="logo" />
       <Routes>
         <Route path="/" element={<Feed posts={allPosts} />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile/:id" element={<Profile user={user} />} />
+        <Route path="/profile/:id" element={<Profile posts={allUserPosts} />} />
       </Routes>
     </div>
   )
