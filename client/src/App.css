@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+body{
+  background-image: url(https://i.imgur.com/PmL9yke.jpg);
+ 
+}
+.signIn {
+  font-family: 'DynaPuff', cursive;
+  justify-content: center;
+  padding-left: 40px;
+  display: inline-block;
+  width: 30%;
+}
+.register{
+  font-family: 'DynaPuff', cursive;
+  justify-content: center;
+  padding-left: 40px;
+  display: inline-block;
+  width: 30%;
+}
+button{
+  font-family: 'DynaPuff', cursive;
+  justify-content: center;
+  padding-left: 2rem;
+  display: inline-block;
+  width: 30%;
+}
+.feed{
+  font-family: 'DynaPuff', cursive;
+  justify-content: center;
+  padding-left: 40px;
+  display: inline-block;
+  width: 30%;
+}
+.navbar{
+  font-family: 'DynaPuff', cursive;
+  justify-content: center;
+  padding-left: 40px;
+  display: inline-block;
+  width: 30%;
+}

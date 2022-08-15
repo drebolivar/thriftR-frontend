@@ -13,7 +13,7 @@ export default function Feed(props) {
       </section>
     </div>
   ) : (
-    <div>
+    <div className='feed'>
       <h1>Loading...</h1>
     </div>
   )
