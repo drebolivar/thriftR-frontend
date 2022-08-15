@@ -1,16 +1,22 @@
 import PostCard from '../components/PostCard'
 
 export default function Feed(props) {
-  return (
+  console.log(props.posts)
+
+  return props.posts ? (
     <nav>
       <h1>I am the Feed</h1>
       <section>
-        {/* {props.posts.map((currentPlayer) => (
-          <div key={props.posts.id} className="posts"> */}
-        <PostCard user={props.user} />
-        {/* </div>
-        ))} */}
+        {props.posts.map((currentPost) => (
+          <div key={currentPost.id} className="posts">
+            <PostCard post={currentPost} />
+          </div>
+        ))}
       </section>
     </nav>
+  ) : (
+    <div>
+      <h1>Loading...</h1>
+    </div>
   )
 }

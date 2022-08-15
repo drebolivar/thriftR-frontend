@@ -1,15 +1,23 @@
 export default function PostCard (props) {
-  return (
+  return props.post ? (
     <div>
       <div className="post-header">
-        <img src={props.user.profileImg} alt='profilepic' className='profile-pic' style={{height: '30px', width: '30px'}}/>
-        <h1 className='username' style={{display: 'inline'}}>{props.user.username}</h1>
+        <img src={props.post.User.profileImg} alt='profilepic' className='profile-pic' style={{height: '30px', width: '30px'}}/>
+        <h1 className='username' style={{display: 'inline'}}>{props.post.User.username}</h1>
       </div>
       <div className="post-body">
-        <img src='https://www.videostatic.com/sites/default/files/styles/post/public/macklemore_thirft.jpg?itok=jPb2MKSt' alt='post' className="post"/>
-        <p className='caption'>I am the caption</p>
-        <p>3 likes</p>
+        <img src={props.post.imgSrc} alt='post' className="post"/>
+        <p className='caption'>{props.post.captions}</p>
+        <p>{props.post.numLikes} likes</p>
       </div>
+      {/* <div className="comments">
+        <p className='comment'>{props.post.Comment.comment}</p>
+        <p>{props.post.Comment.numLikes} likes</p>
+      </div> */}
+    </div>
+  ) : (
+    <div>
+      <h1>Loading</h1>
     </div>
   )
   }

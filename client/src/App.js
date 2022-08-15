@@ -13,6 +13,7 @@ import axios from 'axios'
 
 function App() {
   const [signedIn, setSignIn] = useState(true)
+  const [allPosts, setAllPosts] = useState(null)
   const [user, setUser] = useState({
     username: '',
     profilePicture: '',
@@ -26,8 +27,15 @@ function App() {
     setUser(res.data)
   }
 
+  const getAllPosts = async () => {
+    const res = await axios.get(`${BASE_URL}/feed/`)
+    console.log(res.data)
+    setAllPosts(res.data)
+  }
+
   useEffect(() => {
     getUser()
+    getAllPosts()
   }, [])
 
   return (
@@ -35,7 +43,7 @@ function App() {
       <Nav signedIn={signedIn} />
       <img src={logo} alt="logo" />
       <Routes>
-        <Route path="/" element={<Feed user={user} />} />
+        <Route path="/" element={<Feed posts={allPosts} />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile/:id" element={<Profile user={user} />} />
