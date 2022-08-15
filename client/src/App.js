@@ -22,11 +22,12 @@ function App() {
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
 
+
   const getUser = async () => {
-    const res = await axios.get(`${BASE_URL}/users/1`)
-    console.log(res.data)
-    setUser(res.data)
-  }
+    const res = await axios.get(`${BASE_URL}/users/1`);
+    console.log(res.data);
+    setUser(res.data);
+  };
 
   const getAllPosts = async () => {
     const res = await axios.get(`${BASE_URL}/feed/`)
@@ -54,15 +55,16 @@ function App() {
     console.log(allUserPosts)
   }
 
+
   useEffect(() => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
     if (token) {
       checkToken()
       getUser()
       getAllPosts()
       // getUserPosts()
     }
-  }, [])
+  }, []);
 
   return (
     <div className="App">
@@ -89,7 +91,9 @@ function App() {
         <Route path="/profile/:id" element={<Profile posts={allUserPosts} />} />
       </Routes>
     </div>
-  )
+  );
 }
 
+
 export default App
+
