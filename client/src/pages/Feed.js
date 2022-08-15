@@ -1,10 +1,8 @@
 import PostCard from '../components/PostCard'
 
 export default function Feed(props) {
-  console.log(props.posts)
-
   return props.posts ? (
-    <nav>
+    <div>
       <h1>I am the Feed</h1>
       <section>
         {props.posts.map((currentPost) => (
@@ -13,7 +11,7 @@ export default function Feed(props) {
           </div>
         ))}
       </section>
-    </nav>
+    </div>
   ) : (
     <div>
       <h1>Loading...</h1>
