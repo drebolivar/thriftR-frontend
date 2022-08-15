@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 export default function Nav (props) {
 return props.signedIn ? (
-  <nav>
+  <nav className="navbar">
     <Link to='/'>Feed</Link>
     <Link to='/profile'>Profile</Link>
     <Link to='/logout'>Log Out</Link>
