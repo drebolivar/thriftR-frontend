@@ -7,7 +7,7 @@ import Feed from './pages/Feed'
 import Profile from './pages/Profile'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
-import Client from './services/api'
+// import Client from './services/api'
 import { BASE_URL } from './services/api'
 import axios from 'axios'
 import { CheckSession } from './services/Auth'
@@ -15,14 +15,13 @@ import { useNavigate } from 'react-router-dom'
 
 function App() {
   let navigate = useNavigate()
-  
+
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-  const [signedIn, setSignIn] = useState(true)
+  const [signedIn, setSignIn] = useState(false)
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
-  
- 
+
   const getUser = async () => {
     const res = await axios.get(`${BASE_URL}/users/1`)
     console.log(res.data)
@@ -35,40 +34,39 @@ function App() {
     setAllPosts(res.data)
   }
 
-
   const handleLogOut = () => {
     //Reset all auth related state and clear localStorage
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
   }
-  
+
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
     toggleAuthenticated(true)
   }
-  
+
   const getUserPosts = async () => {
     const res = await axios.get(`${BASE_URL}/feed/profile/1`)
     console.log(res.data)
     setAllUserPosts(res.data)
     console.log(allUserPosts)
   }
-  
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
       getUser()
       getAllPosts()
-      getUserPosts()
+      // getUserPosts()
     }
   }, [])
 
   return (
     <div className="App">
-      <Nav signedIn={signedIn} userId={user.id} />
+      <Nav signedIn={signedIn} />
       <img src={logo} alt="logo" />
       <Routes>
         <Route path="/" element={<Feed posts={allPosts} />} />
@@ -84,7 +82,9 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route
           path="/feed"
-          element={<Feed user={user} posts={allPosts} authenticated={authenticated} />}
+          element={
+            <Feed user={user} posts={allPosts} authenticated={authenticated} />
+          }
         />
         <Route path="/profile/:id" element={<Profile posts={allUserPosts} />} />
       </Routes>
@@ -93,4 +93,3 @@ function App() {
 }
 
 export default App
-
