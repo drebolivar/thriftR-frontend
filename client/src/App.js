@@ -38,7 +38,11 @@ function App() {
     getAllPosts()
   }, [])
 
-  
+  const getLogin = async () => {
+    const res = await axios.get('${BASE_URL}/auth/login')
+    console.log(res.data)
+    setLogin(res.data)
+  }
 
   return (
     <div className="App">
