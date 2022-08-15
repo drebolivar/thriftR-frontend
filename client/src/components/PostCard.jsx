@@ -1,3 +1,5 @@
+import Comments from "./Comments"
+
 export default function PostCard (props) {
   return props.post ? (
     <div>
@@ -10,10 +12,13 @@ export default function PostCard (props) {
         <p className='caption'>{props.post.captions}</p>
         <p>{props.post.numLikes} likes</p>
       </div>
-      {/* <div className="comments">
-        <p className='comment'>{props.post.Comment.comment}</p>
-        <p>{props.post.Comment.numLikes} likes</p>
-      </div> */}
+      <section>
+        {props.post.Comments.map((currentComment) => (
+          <div>
+            <Comments comment={currentComment}/>
+          </div>
+        ))}
+      </section>
     </div>
   ) : (
     <div>
