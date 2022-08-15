@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+body{
+  background-image: url(/assets/background.png);
+  opacity: initial;
+}
+.signIn {
+  font-family: 'DynaPuff', cursive;
+  flex-direction: wrap;
+}
