@@ -38,6 +38,8 @@ function App() {
     getAllPosts()
   }, [])
 
+  
+
   return (
     <div className="App">
       <Nav signedIn={signedIn} />
