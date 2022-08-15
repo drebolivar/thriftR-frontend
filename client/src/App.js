@@ -38,9 +38,7 @@ function App() {
 
   const getUserPosts = async () => {
     const res = await axios.get(`${BASE_URL}/feed/profile/1`)
-    console.log(res.data)
     setAllUserPosts(res.data)
-    console.log(allUserPosts)
   }
 
   useEffect(() => {
@@ -48,8 +46,6 @@ function App() {
     getAllPosts()
     getUserPosts()
   }, [])
-
-  console.log(allUserPosts)
 
   return (
     <div className="App">
