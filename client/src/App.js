@@ -10,16 +10,13 @@ import SignIn from './pages/SignIn'
 import Client from './services/api'
 import { BASE_URL } from './services/api'
 import axios from 'axios'
+import { CheckSession } from './services/Auth'
 
 function App() {
-  const [signedIn, setSignIn] = useState(false)
+  const [authenticated, toggleAuthenticated] = useState(false)
+  const [user, setUser] = useState(null)
+  const [signedIn, setSignIn] = useState(true)
   const [allPosts, setAllPosts] = useState(null)
-  const [user, setUser] = useState({
-    username: '',
-    profilePicture: '',
-    password: '',
-    email: ''
-  })
 
   const getUser = async () => {
     const res = await axios.get(`${BASE_URL}/users/1`)
@@ -33,12 +30,27 @@ function App() {
     setAllPosts(res.data)
   }
 
+  const handleLogOut = () => {
+    //Reset all auth related state and clear localStorage
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
+
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+    toggleAuthenticated(true)
+  }
+
   useEffect(() => {
-    getUser()
-    getAllPosts()
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+      getUser()
+      getAllPosts()
+    }
   }, [])
-
-
 
   return (
     <div className="App">
@@ -46,8 +58,20 @@ function App() {
       <img src={logo} alt="logo" />
       <Routes>
         <Route path="/" element={<Feed posts={allPosts} />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route
+          path="/signin"
+          element={
+            <SignIn
+              setUser={setUser}
+              toggleAuthenticated={toggleAuthenticated}
+            />
+          }
+        />
         <Route path="/register" element={<Register />} />
+        <Route
+          path="/feed"
+          element={<Feed user={user} authenticated={authenticated} />}
+        />
         <Route path="/profile/:id" element={<Profile user={user} />} />
       </Routes>
     </div>
