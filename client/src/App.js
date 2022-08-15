@@ -21,14 +21,14 @@ function App() {
   })
 
   const getUser = async () => {
-    const res = await axios.get(BASE_URL)
-    console.log(res)
-    //setUser(res)
+    const res = await axios.get(`${BASE_URL}/users/1`)
+    console.log(res.data)
+    setUser(res.data)
   }
 
-  // useEffect(() => {
-  //   getUser()
-  // }, [])
+  useEffect(() => {
+    getUser()
+  }, [])
 
   return (
     <div className="App">

@@ -7,7 +7,7 @@ export default function Feed(props) {
       <section>
         {/* {props.posts.map((currentPlayer) => (
           <div key={props.posts.id} className="posts"> */}
-        <PostCard />
+        <PostCard user={props.user} />
         {/* </div>
         ))} */}
       </section>
