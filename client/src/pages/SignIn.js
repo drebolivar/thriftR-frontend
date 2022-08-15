@@ -1,56 +1,57 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from 'react'
+import { SignInUser } from '../services/Auth'
+import { useNavigate } from 'react-router-dom'
 
-function SignIn() {
-  // const [profile, setProfile] = useState([]);
-  // const initialState = {
-  //   username: "",
-  //   password: "",
-  // };
-  // const [formState, setFormState] = useState(initialState);
-  // const [submitted, setSubmitted] = useState(true);
+const SignIn = (props) => {
+  let navigate = useNavigate()
 
-  // const handleChange = (event) => {
-  //   setFormState({ ...formState, [event.target.id]: event.target.value });
-  // };
+  const [formValues, setFormValues] = useState({ email: '', password: '' })
 
-  // useEffect(() => {
-  //   const getProfile = async () => {
-  //     try {
-  //       if (submitted) {
-  //         let res = await axios.get("http://localhost:3001/auth/login");
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
 
-  //         setProfile(res.data.profile);
-  //         setSubmitted(false);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getProfile();
-  // }, [submitted]);
-
-  // const handlesubmit = async (e) => {
-  //   e.preventDefault();
-  //   let res = await axios.post("http://localhost:3001/auth/login", formState);
-  //   console.log(res.data.profile);
-  //   console.log(formState);
-  //   setFormState(initialState);
-  //   setSubmitted(true);
-  //   e.target.reset();
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const payload = await SignInUser(formValues)
+    setFormValues({ email: '', password: '' })
+    props.setUser(payload)
+    props.toggleAuthenticated(true)
+    navigate('/feed')
+  }
 
   return (
-    <div className="signIn">
-      <h1>Login</h1>
-      <form>
-        <label htmlFor="usernameSignIn">Username:</label>
-        <input id="usernameSignIn" type="text" />
-        <label htmlFor="passwordSignIn">Password:</label>
-        <input id="passwordSignIn" type="password" />
-        <button type="submitSignIn">Login</button>
-      </form>
+    <div className="signin col">
+      <div className="card-overlay centered">
+        <form className="col" onSubmit={handleSubmit}>
+          <div className="input-wrapper">
+            <label htmlFor="email">Email</label>
+            <input
+              onChange={handleChange}
+              name="email"
+              type="email"
+              placeholder="example@example.com"
+              value={formValues.email}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="password">Password</label>
+            <input
+              onChange={handleChange}
+              type="password"
+              name="password"
+              value={formValues.password}
+              required
+            />
+          </div>
+          <button disabled={!formValues.email || !formValues.password}>
+            Sign In
+          </button>
+        </form>
+      </div>
     </div>
-  );
+  )
 }
-export default SignIn;
+
+export default SignIn
