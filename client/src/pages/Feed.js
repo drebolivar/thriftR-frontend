@@ -1,9 +1,9 @@
 import PostCard from '../components/PostCard'
 import { useNavigate } from 'react-router-dom'
 
-export default function Feed(props, { user, authenticated }) {
+export default function Feed(props) {
   let navigate = useNavigate()
-  return user && authenticated ? (
+  return props.user && props.authenticated ? (
     props.posts ? (
       <div>
         <h1>I am the Feed</h1>

@@ -23,10 +23,8 @@ export default function CreatePost (props) {
   const handlePostSubmit = async (e) => {
     e.preventDefault()
     let res = await axios.post(`${BASE_URL}/feed`, newPostValues)
-    console.log(res)
     setNewPostValues(initialPostValues)
-    console.log(newPostValues)
-    // navigate('/feed')
+    navigate('/feed')
   }
 
   return (
