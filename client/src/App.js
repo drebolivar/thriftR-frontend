@@ -15,46 +15,37 @@ import { useNavigate } from 'react-router-dom'
 
 function App() {
   let navigate = useNavigate()
-
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-  const [signedIn, setSignIn] = useState(false)
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
-
   const getUser = async () => {
     const res = await axios.get(`${BASE_URL}/users/${user.id}`)
     console.log(res.data)
     setUser(res.data)
   }
-
   const getAllPosts = async () => {
     const res = await axios.get(`${BASE_URL}/feed/`)
     console.log(res.data)
     setAllPosts(res.data)
   }
-
   const handleLogOut = () => {
     //Reset all auth related state and clear localStorage
     console.log(user)
     console.log(authenticated)
-    setSignIn(false)
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
   }
-
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
     toggleAuthenticated(true)
   }
-
   const getUserPosts = async () => {
     const res = await axios.get(`${BASE_URL}/feed/profile/${user.id}`)
     setAllUserPosts(res.data)
   }
-
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -65,10 +56,9 @@ function App() {
       getUserPosts()
     }
   }, [user])
-
   return (
     <div className="App">
-      <Nav signedIn={signedIn} user={user} handleLogOut={handleLogOut} />
+      <Nav signedIn={authenticated} user={user} handleLogOut={handleLogOut} />
       <img src={logo} alt="logo" />
       <Routes>
         <Route path="/" element={<Feed posts={allPosts} />} />
@@ -78,7 +68,6 @@ function App() {
             <SignIn
               setUser={setUser}
               toggleAuthenticated={toggleAuthenticated}
-              setSignIn={setSignIn}
             />
           }
         />
@@ -95,5 +84,4 @@ function App() {
     </div>
   )
 }
-
 export default App
