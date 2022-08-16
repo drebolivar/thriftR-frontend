@@ -40,38 +40,124 @@ body{
   background-image: url(https://i.imgur.com/PmL9yke.jpg);
  
 }
-.signIn {
+.signin{
   font-family: 'DynaPuff', cursive;
   justify-content: center;
-  padding-left: 40px;
-  display: inline-block;
-  width: 30%;
+  display: flex;
+  display: grid;
 }
+.emailsignintext{
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-left: 20rem;
+  margin-top: -2rem;
+}
+.passwordsignintext{
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-left: 20rem;
+  margin-top: -2rem;
+}
+.usernameText{
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-left: 20rem;
+  margin-top: -2rem;
+}
+.username{
+  /* margin-bottom: 90rem; */
+}
+.emailText{
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-right: 2rem;
+  margin-left: 20rem;
+}
+.email{
+  font-family: 'DynaPuff', cursive;
+  font: hsl(0deg 0% 30%);
+  padding: 15px; 
+  margin: 21px
+}
+.passwordText{
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-right: 2rem;
+  margin-left: 20rem;
+}
+.password{
+  padding: 15px;  
+  margin: 4px
+}
+.passwordConfirmText{
+  margin-left: 4rem;
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-right: 2rem;
+  margin-left: 20rem;
+}
+.confirmPassword{
+  padding: -35px; 
+  margin: -47px;
+  margin-right: 2rem;
+}
+
 .register{
   font-family: 'DynaPuff', cursive;
+  color: rgb(43, 10, 89);
   justify-content: center;
-  padding-left: 40px;
-  display: inline-block;
-  width: 30%;
+  display: flex;
+  display: grid;
+}
+.feed{
+    font-family: 'DynaPuff', cursive;
 }
 button{
   font-family: 'DynaPuff', cursive;
   justify-content: center;
-  padding-left: 2rem;
   display: inline-block;
-  width: 30%;
-}
-.feed{
-  font-family: 'DynaPuff', cursive;
-  justify-content: center;
-  padding-left: 40px;
-  display: inline-block;
-  width: 30%;
-}
-.navbar{
-  font-family: 'DynaPuff', cursive;
-  justify-content: center;
-  padding-left: 40px;
-  display: inline-block;
-  width: 30%;
+  margin: 10px;
+  padding: 1em;
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+	background: rgb(70, 192, 115);
+	color: rgb(43, 10, 89);
+	border: none;
+	border-radius: 30px;
+	font-weight: 600;
 }

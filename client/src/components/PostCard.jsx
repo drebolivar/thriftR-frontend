@@ -1,6 +1,10 @@
 import Comments from "./Comments"
 
+
 export default function PostCard (props) {
+
+  
+
   return props.post ? (
     <div>
       <div className="post-header">
@@ -10,7 +14,7 @@ export default function PostCard (props) {
       <div className="post-body">
         <img src={props.post.imgSrc} alt='post' className="post"/>
         <p className='caption'>{props.post.captions}</p>
-        <p>{props.post.numLikes} likes</p>
+        <button className="likes">{props.post.numLikes}<br></br>Likes</button>
       </div>
       {/* <section>Add comment</section> */}
       <section>

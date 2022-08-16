@@ -14,6 +14,7 @@ import { CheckSession } from './services/Auth'
 import { useNavigate } from 'react-router-dom'
 
 function App() {
+
   let navigate = useNavigate()
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
@@ -42,6 +43,7 @@ function App() {
     setUser(user)
     toggleAuthenticated(true)
   }
+
   const getUserPosts = async () => {
     console.log(user)
     const res = await axios.get(`${BASE_URL}/feed/profile/${user.id}`)
