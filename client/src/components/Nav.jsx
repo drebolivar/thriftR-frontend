@@ -6,6 +6,7 @@ return props.signedIn ? (
     <Link to='/'>Feed</Link>
     <Link to='/profile'>Profile</Link>
     <Link to='/logout'>Log Out</Link>
+    <h1> Welcome {props.user.username}</h1>
   </nav>
 ) : (
   <nav>
