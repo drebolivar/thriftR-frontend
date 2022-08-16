@@ -8,6 +8,7 @@ import Profile from './pages/Profile'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import Client from './services/api'
+import CreatePost from './components/CreatePost'
 import { BASE_URL } from './services/api'
 import axios from 'axios'
 import { CheckSession } from './services/Auth'
@@ -21,7 +22,7 @@ function App() {
   const [signedIn, setSignIn] = useState(false)
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
-
+  
   const getUser = async () => {
     const res = await axios.get(`${BASE_URL}/users/1`)
     console.log(res.data)
@@ -49,9 +50,7 @@ function App() {
 
   const getUserPosts = async () => {
     const res = await axios.get(`${BASE_URL}/feed/profile/1`)
-    console.log(res.data)
     setAllUserPosts(res.data)
-    console.log(allUserPosts)
   }
 
   useEffect(() => {
@@ -76,10 +75,12 @@ function App() {
             <SignIn
               setUser={setUser}
               toggleAuthenticated={toggleAuthenticated}
+              setSignIn={setSignIn}
             />
           }
         />
         <Route path="/register" element={<Register />} />
+        <Route path="/newpost" element={<CreatePost />} />
         <Route
           path="/feed"
           element={
