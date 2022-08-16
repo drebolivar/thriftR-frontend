@@ -40,38 +40,93 @@ body{
   background-image: url(https://i.imgur.com/PmL9yke.jpg);
  
 }
-.signIn {
+.username{
+
+}
+.signin{
   font-family: 'DynaPuff', cursive;
   justify-content: center;
-  padding-left: 40px;
-  display: inline-block;
-  width: 30%;
+  display: flex;
+  display: grid;
 }
+.usernameText{
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-top: -3em;
+}
+.username{
+  font-family: 'DynaPuff', cursive;
+  font: hsl(0deg 0% 30%);
+  padding: 15px;
+  margin: 2px;
+}
+.emailText{
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-top: -3em;
+}
+.email{
+  font-family: 'DynaPuff', cursive;
+  font: hsl(0deg 0% 30%);
+  padding: 15px; 
+  margin: 21px
+}
+.passwordText{
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-top: -3em;
+}
+.password{
+  padding: 15px;  
+  margin: 4px
+}
+.passwordConfirmText{
+  margin-left: 4rem;
+  background: rgb(70, 192, 115);
+  box-shadow: 0 0 2em rgb(43, 10, 89);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: hsl(0deg 0% 30%);
+  margin-top: -3em;
+}
+.confirmPassword{
+  padding: -35px; 
+  margin: -47px
+}
+
 .register{
   font-family: 'DynaPuff', cursive;
   justify-content: center;
-  padding-left: 40px;
-  display: inline-block;
-  width: 30%;
+  display: flex;
+  display: grid;
+}
+.feed{
+    font-family: 'DynaPuff', cursive;
 }
 button{
   font-family: 'DynaPuff', cursive;
   justify-content: center;
-  padding-left: 2rem;
   display: inline-block;
-  width: 30%;
-}
-.feed{
-  font-family: 'DynaPuff', cursive;
-  justify-content: center;
-  padding-left: 40px;
-  display: inline-block;
-  width: 30%;
-}
-.navbar{
-  font-family: 'DynaPuff', cursive;
-  justify-content: center;
-  padding-left: 40px;
-  display: inline-block;
-  width: 30%;
+  margin: 10px;
 }

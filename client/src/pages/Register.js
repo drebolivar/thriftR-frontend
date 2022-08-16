@@ -1,43 +1,45 @@
-import { useState } from 'react'
-import { RegisterUser } from '../services/Auth'
-import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+import { RegisterUser } from "../services/Auth";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   const [formValues, setFormValues] = useState({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  })
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.username]: e.target.value })
-  }
+    setFormValues({ ...formValues, [e.target.username]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     await RegisterUser({
       username: formValues.username,
       email: formValues.email,
-      password: formValues.password
-    })
+      password: formValues.password,
+    });
     setFormValues({
-      username: '',
-      emial: '',
-      password: '',
-      confirmPassword: ''
-    })
-    navigate('/signin')
-  }
+      username: "",
+      emial: "",
+      password: "",
+      confirmPassword: "",
+    });
+    navigate("/signin");
+  };
 
   return (
-    <div className="signin col">
+    <div className="register">
+      <h1>Register</h1>
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
-            <label htmlFor="username">Username</label>
+          <div>
+            <label className="username" htmlFor="username">Username</label>
             <input
+              className="usernameText"
               onChange={handleChange}
               name="name"
               type="text"
@@ -46,9 +48,10 @@ const Register = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
-            <label htmlFor="email">Email</label>
+          <div>
+            <label className="email" htmlFor="email">Email</label>
             <input
+              className="emailText"
               onChange={handleChange}
               name="email"
               type="email"
@@ -58,9 +61,10 @@ const Register = () => {
             />
           </div>
 
-          <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
+          <div>
+            <label className="password" htmlFor="password">Password</label>
             <input
+              className="passwordText"
               onChange={handleChange}
               type="password"
               name="password"
@@ -68,9 +72,10 @@ const Register = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
-            <label htmlFor="confirmPassword">Confirm Password</label>
+          <div>
+            <label className="confirmPassword" htmlFor="confirmPassword">Confirm Password</label>
             <input
+            className="passwordConfirmText"
               onChange={handleChange}
               type="password"
               name="confirmPassword"
@@ -90,7 +95,7 @@ const Register = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

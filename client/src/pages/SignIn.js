@@ -17,11 +17,11 @@ const SignIn = (props) => {
     setFormValues({ email: '', password: '' })
     props.setUser(payload)
     props.toggleAuthenticated(true)
-    navigate('/')
+    navigate('/feed')
   }
 
   return (
-    <div className="signin col">
+    <div className="signin">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
