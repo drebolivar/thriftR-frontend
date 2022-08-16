@@ -16,6 +16,7 @@ export default function PostCard (props) {
         <p className='caption'>{props.post.captions}</p>
         <button className="likes">{props.post.numLikes}<br></br>Likes</button>
       </div>
+      {/* <section>Add comment</section> */}
       <section>
         {props.post.Comments.map((currentComment) => (
           <div>
