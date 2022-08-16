@@ -17,7 +17,7 @@ const SignIn = (props) => {
     setFormValues({ email: '', password: '' })
     props.setUser(payload)
     props.toggleAuthenticated(true)
-    navigate('/feed')
+    navigate('/')
   }
 
   return (

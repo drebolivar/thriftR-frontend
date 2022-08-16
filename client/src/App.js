@@ -7,7 +7,7 @@ import Feed from "./pages/Feed";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
-import Client from "./services/api";
+// import Client from './services/api'
 import { BASE_URL } from "./services/api";
 import axios from "axios";
 import { CheckSession } from "./services/Auth";
@@ -18,7 +18,7 @@ function App() {
 
   const [authenticated, toggleAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
-  const [signedIn, setSignIn] = useState(true);
+  const [signedIn, setSignIn] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
   const [allUserPosts, setAllUserPosts] = useState([]);
 
@@ -57,6 +57,8 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
+      setSignIn();
+      handleLogOut();
       checkToken();
       getUser();
       getAllPosts();
