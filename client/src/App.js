@@ -18,7 +18,6 @@ function App() {
 
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-  const [signedIn, setSignIn] = useState(false)
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
 
@@ -38,7 +37,6 @@ function App() {
     //Reset all auth related state and clear localStorage
     console.log(user)
     console.log(authenticated)
-    setSignIn(false)
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
@@ -51,7 +49,9 @@ function App() {
   }
 
   const getUserPosts = async () => {
+    console.log(user)
     const res = await axios.get(`${BASE_URL}/feed/profile/${user.id}`)
+    console.log(res.data)
     setAllUserPosts(res.data)
   }
 
@@ -68,7 +68,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav signedIn={signedIn} user={user} handleLogOut={handleLogOut} />
+      <Nav signedIn={authenticated} user={user} handleLogOut={handleLogOut} />
       <img src={logo} alt="logo" />
       <Routes>
         <Route path="/" element={<Feed posts={allPosts} />} />
@@ -78,7 +78,6 @@ function App() {
             <SignIn
               setUser={setUser}
               toggleAuthenticated={toggleAuthenticated}
-              setSignIn={setSignIn}
             />
           }
         />
