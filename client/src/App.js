@@ -22,7 +22,7 @@ function App() {
   const [signedIn, setSignIn] = useState(false)
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
-  
+
   const getUser = async () => {
     const res = await axios.get(`${BASE_URL}/users/1`)
     console.log(res.data)
@@ -36,7 +36,6 @@ function App() {
   }
 
   const handleLogOut = () => {
-    //Reset all auth related state and clear localStorage
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
