@@ -5,7 +5,8 @@ return props.signedIn ? (
   <nav className="navbar">
     <Link to='/'>Feed</Link>
     <Link to='/profile'>Profile</Link>
-    <Link to='/logout'>Log Out</Link>
+    <button onClick={props.handleLogOut}>Log Out</button>
+    <h1> Welcome {props.user.username}</h1>
   </nav>
 ) : (
   <nav>

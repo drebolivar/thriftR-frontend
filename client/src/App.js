@@ -1,17 +1,17 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
-import logo from "./assets/thriftrlogo.png";
-import Nav from "./components/Nav.jsx";
-import Feed from "./pages/Feed";
-import Profile from "./pages/Profile";
-import Register from "./pages/Register";
-import SignIn from "./pages/SignIn";
-// import Client from './services/api'
-import { BASE_URL } from "./services/api";
-import axios from "axios";
-import { CheckSession } from "./services/Auth";
-import { useNavigate } from "react-router-dom";
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import logo from './assets/thriftrlogo.png'
+import Nav from './components/Nav.jsx'
+import Feed from './pages/Feed'
+import Profile from './pages/Profile'
+import Register from './pages/Register'
+import SignIn from './pages/SignIn'
+import CreatePost from './components/CreatePost'
+import { BASE_URL } from './services/api'
+import axios from 'axios'
+import { CheckSession } from './services/Auth'
+import { useNavigate } from 'react-router-dom'
 
 function App() {
   let navigate = useNavigate();
@@ -23,10 +23,10 @@ function App() {
   const [allUserPosts, setAllUserPosts] = useState([]);
 
   const getUser = async () => {
-    const res = await axios.get(`${BASE_URL}/users/1`);
-    console.log(res.data);
-    setUser(res.data);
-  };
+    const res = await axios.get(`${BASE_URL}/users/${user.id}`)
+    console.log(res.data)
+    setUser(res.data)
+  }
 
   const getAllPosts = async () => {
     const res = await axios.get(`${BASE_URL}/feed/`);
@@ -36,10 +36,13 @@ function App() {
 
   const handleLogOut = () => {
     //Reset all auth related state and clear localStorage
-    setUser(null);
-    toggleAuthenticated(false);
-    localStorage.clear();
-  };
+    console.log(user)
+    console.log(authenticated)
+    setSignIn(false)
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
 
   const checkToken = async () => {
     const user = await CheckSession();
@@ -48,27 +51,24 @@ function App() {
   };
 
   const getUserPosts = async () => {
-    const res = await axios.get(`${BASE_URL}/feed/profile/1`);
-    console.log(res.data);
-    setAllUserPosts(res.data);
-    console.log(allUserPosts);
-  };
+    const res = await axios.get(`${BASE_URL}/feed/profile/${user.id}`)
+    setAllUserPosts(res.data)
+  }
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token')
     if (token) {
-      setSignIn();
-      handleLogOut();
-      checkToken();
-      getUser();
-      getAllPosts();
-      getUserPosts();
+      console.log(user)
+      checkToken()
+      // getUser()
+      getAllPosts()
+      getUserPosts()
     }
-  }, []);
+  }, [user])
 
   return (
     <div className="App">
-      <Nav signedIn={signedIn} />
+      <Nav signedIn={signedIn} user={user} handleLogOut={handleLogOut} />
       <img src={logo} alt="logo" />
       <Routes>
         <Route path="/" element={<Feed posts={allPosts} />} />
@@ -78,10 +78,12 @@ function App() {
             <SignIn
               setUser={setUser}
               toggleAuthenticated={toggleAuthenticated}
+              setSignIn={setSignIn}
             />
           }
         />
         <Route path="/register" element={<Register />} />
+        <Route path="/newpost" element={<CreatePost />} />
         <Route
           path="/feed"
           element={
@@ -91,7 +93,7 @@ function App() {
         <Route path="/profile/:id" element={<Profile posts={allUserPosts} />} />
       </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -12,8 +12,8 @@ const Register = () => {
   });
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.username]: e.target.value });
-  };
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
