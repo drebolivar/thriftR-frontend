@@ -9,6 +9,7 @@ import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import Client from './services/api'
 import CreatePost from './components/CreatePost'
+
 import { BASE_URL } from './services/api'
 import axios from 'axios'
 import { CheckSession } from './services/Auth'
@@ -22,12 +23,12 @@ function App() {
   const [signedIn, setSignIn] = useState(false)
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
-
+  
   const getUser = async () => {
-    const res = await axios.get(`${BASE_URL}/users/1`)
-    console.log(res.data)
-    setUser(res.data)
-  }
+    const res = await axios.get(`${BASE_URL}/users/1`);
+    console.log(res.data);
+    setUser(res.data);
+  };
 
   const getAllPosts = async () => {
     const res = await axios.get(`${BASE_URL}/feed/`)
@@ -52,16 +53,16 @@ function App() {
     const res = await axios.get(`${BASE_URL}/feed/profile/1`)
     setAllUserPosts(res.data)
   }
-
+  
   useEffect(() => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
     if (token) {
       checkToken()
       getUser()
       getAllPosts()
-      getUserPosts()
+      // getUserPosts()
     }
-  }, [])
+  }, []);
 
   return (
     <div className="App">
@@ -90,7 +91,8 @@ function App() {
         <Route path="/profile/:id" element={<Profile posts={allUserPosts} />} />
       </Routes>
     </div>
-  )
+  );
 }
+
 
 export default App

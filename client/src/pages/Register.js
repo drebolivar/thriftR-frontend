@@ -42,7 +42,7 @@ const Register = () => {
               name="name"
               type="text"
               placeholder="John Smith"
-              value={formValues.name}
+              value={formValues.username}
               required
             />
           </div>
