@@ -29,6 +29,8 @@ function App() {
     const res = await axios.get(`${BASE_URL}/users/${user.id}`)
     console.log(res.data)
     setUserData(res.data)
+    const result = await axios.get(`${BASE_URL}/feed/profile/${user.id}`)
+    setAllUserPosts(result.data)
   }
 
   //gets all posts regardless of user
@@ -70,7 +72,9 @@ function App() {
       checkToken()
       getUserData()
       getAllPosts()
-      getUserPosts()
+      if (userData) {
+        getUserPosts()
+      }
     }
   }, [useEffectToggler])
 
@@ -81,7 +85,9 @@ function App() {
         user={userData}
         handleLogOut={handleLogOut}
       />
-      <img src={logo} alt="logo" />
+      <div className="logo">
+        <img src={logo} alt="logo" />
+      </div>
       <Routes>
         <Route
           path="/signin"
