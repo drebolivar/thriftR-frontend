@@ -1,6 +1,9 @@
 import PostCard from '../components/PostCard'
+// import { useParams } from 'react-router-dom'
 
 export default function Profile(props) {
+  // let {id} = useParams()
+
   return props.posts ? (
     <div>
       <section>

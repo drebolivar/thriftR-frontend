@@ -1,35 +1,35 @@
-import { useState } from "react";
-import { RegisterUser } from "../services/Auth";
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react'
+import { RegisterUser } from '../services/Auth'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
-  let navigate = useNavigate();
+  let navigate = useNavigate()
   const [formValues, setFormValues] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  })
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     await RegisterUser({
       username: formValues.username,
       email: formValues.email,
-      password: formValues.password,
-    });
+      password: formValues.password
+    })
     setFormValues({
-      username: "",
-      emial: "",
-      password: "",
-      confirmPassword: "",
-    });
-    navigate("/signin");
-  };
+      username: '',
+      emial: '',
+      password: '',
+      confirmPassword: ''
+    })
+    navigate('/signin')
+  }
 
   return (
     <div className="register">
@@ -37,19 +37,23 @@ const Register = () => {
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div>
-            <label className="username" htmlFor="username">Username</label>
+            <label className="username" htmlFor="username">
+              Username
+            </label>
             <input
               className="usernameText"
               onChange={handleChange}
-              name="name"
+              name="username"
               type="text"
-              placeholder="John Smith"
+              placeholder="username"
               value={formValues.username}
               required
             />
           </div>
           <div>
-            <label className="email" htmlFor="email">Email</label>
+            <label className="email" htmlFor="email">
+              Email
+            </label>
             <input
               className="emailText"
               onChange={handleChange}
@@ -62,7 +66,9 @@ const Register = () => {
           </div>
 
           <div>
-            <label className="password" htmlFor="password">Password</label>
+            <label className="password" htmlFor="password">
+              Password
+            </label>
             <input
               className="passwordText"
               onChange={handleChange}
@@ -73,9 +79,11 @@ const Register = () => {
             />
           </div>
           <div>
-            <label className="confirmPassword" htmlFor="confirmPassword">Confirm Password</label>
+            <label className="confirmPassword" htmlFor="confirmPassword">
+              Confirm Password
+            </label>
             <input
-            className="passwordConfirmText"
+              className="passwordConfirmText"
               onChange={handleChange}
               type="password"
               name="confirmPassword"
@@ -95,7 +103,7 @@ const Register = () => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Register;
+export default Register
