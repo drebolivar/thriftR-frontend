@@ -7,7 +7,7 @@ export default function CreatePost (props) {
   
   let navigate = useNavigate()
   let initialPostValues = { 
-    authorId: 2, 
+    authorId: props.user.id, 
     imgSrc: '',
     captions: '',
     location: '',

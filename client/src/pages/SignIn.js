@@ -18,6 +18,7 @@ const SignIn = (props) => {
     props.setUser(payload)
     props.toggleAuthenticated(true)
     navigate('/feed')
+    props.setUseEffectToggler(!props.useEffectToggler)
   }
 
   return (
@@ -27,7 +28,9 @@ const SignIn = (props) => {
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div>
-            <label className="emailsignin" htmlFor="email">Email</label>
+            <label className="emailsignin" htmlFor="email">
+              Email
+            </label>
             <input
               className="emailsignintext"
               onChange={handleChange}
@@ -39,7 +42,9 @@ const SignIn = (props) => {
             />
           </div>
           <div>
-            <label className="passwordsignin" htmlFor="password">Password</label>
+            <label className="passwordsignin" htmlFor="password">
+              Password
+            </label>
             <input
               className="passwordsignintext"
               onChange={handleChange}
