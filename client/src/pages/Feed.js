@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Feed(props) {
   let navigate = useNavigate()
-  console.log(props.user)
-  console.log(props.authenticated)
   return props.user && props.authenticated ? (
     props.posts ? (
       <div>
