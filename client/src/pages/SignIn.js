@@ -22,6 +22,8 @@ const SignIn = (props) => {
 
   return (
     <div className="signin">
+      <div className='brand-logo'></div>
+      <div className='brand-title'></div>
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div>
@@ -46,6 +48,9 @@ const SignIn = (props) => {
               value={formValues.password}
               required
             />
+          </div>
+          <div className="createAccount">
+            <p>Not registered? <a href="/register">Create an account</a></p>
           </div>
           <button disabled={!formValues.email || !formValues.password}>
             Sign In
