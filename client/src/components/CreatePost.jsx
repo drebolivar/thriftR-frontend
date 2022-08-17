@@ -22,7 +22,11 @@ export default function CreatePost (props) {
 
   const handlePostSubmit = async (e) => {
     e.preventDefault()
-    let res = await axios.post(`${BASE_URL}/feed`, newPostValues)
+    let res = await axios.post(`${BASE_URL}/feed`, newPostValues, {
+      headers: {
+        'authorization': `Bearer ${props.token}`
+      }
+    })
     setNewPostValues(initialPostValues)
     navigate('/feed')
   }
