@@ -2,6 +2,7 @@ import {useState} from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../services/api'
 import { useNavigate } from 'react-router-dom'
+import Client from '../services/api'
 
 
 export default function CreateComment (props) {
@@ -22,7 +23,7 @@ export default function CreateComment (props) {
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault()
-    let res = await axios.post(`${BASE_URL}/comment`, newCommentValues)
+    let res = await Client.post(`${BASE_URL}/comment`, newCommentValues)
     setNewCommentValues(initialCommentValues)
     // navigate('/feed')
   }
