@@ -14,6 +14,7 @@ const SignIn = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const payload = await SignInUser(formValues)
+    console.log(payload)
     setFormValues({ email: '', password: '' })
     props.setUser(payload)
     props.toggleAuthenticated(true)
@@ -24,8 +25,8 @@ const SignIn = (props) => {
   return (
     <div className='signinpage'>
     <div className="signin">
-      <div className='brand-logo'></div>
-      <div className='brand-title'></div>
+      <div className="brand-logo"></div>
+      <div className="brand-title"></div>
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div>
@@ -56,7 +57,9 @@ const SignIn = (props) => {
             />
           </div>
           <div className="createAccount">
-            <p>Not registered? <a href="/register">Create an account</a></p>
+            <p>
+              Not registered? <a href="/register">Create an account</a>
+            </p>
           </div>
           <button className="singinbutton" disabled={!formValues.email || !formValues.password}>
             Sign In

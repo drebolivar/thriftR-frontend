@@ -28,6 +28,7 @@ export default function CreatePost (props) {
       }
     })
     setNewPostValues(initialPostValues)
+    props.setUseEffectToggler(!props.setUseEffectToggler)
     navigate('/feed')
   }
 

@@ -8,6 +8,7 @@ import Profile from './pages/Profile'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import CreatePost from './components/CreatePost'
+import Client from './services/api'
 import { BASE_URL } from './services/api'
 import axios from 'axios'
 import { CheckSession } from './services/Auth'
@@ -27,16 +28,16 @@ function App() {
   //gets full user data including prof pic from the user variable(which is just payload)
   const getUserData = async () => {
     console.log(user)
-    const res = await axios.get(`${BASE_URL}/users/${user.id}`)
+    const res = await Client.get(`${BASE_URL}/users/${user.id}`)
     console.log(res.data)
     setUserData(res.data)
-    const result = await axios.get(`${BASE_URL}/feed/profile/${user.id}`)
+    const result = await Client.get(`${BASE_URL}/feed/profile/${user.id}`)
     setAllUserPosts(result.data)
   }
 
   //gets all posts regardless of user
   const getAllPosts = async () => {
-    const res = await axios.get(`${BASE_URL}/feed/`)
+    const res = await Client.get(`${BASE_URL}/feed/`)
     console.log(res.data)
     console.log(user)
     setAllPosts(res.data)
@@ -46,16 +47,22 @@ function App() {
     console.log(user)
     console.log(authenticated)
     setUser(null)
+    console.log(user)
     toggleAuthenticated(false)
+    console.log(authenticated)
     localStorage.clear()
   }
 
   //checks to see if there is a valid token in the local storage and if so sets user to the token
   const checkToken = async () => {
-    const tokenUser = await CheckSession()
-    console.log(tokenUser)
-    setUser(tokenUser)
+    const user = await CheckSession()
     console.log(user)
+    setUser(user)
+    authenticationToggler()
+  }
+
+  const authenticationToggler = () => {
+    console.log('I am the authentication toggler')
     toggleAuthenticated(true)
   }
 
@@ -63,7 +70,7 @@ function App() {
   const getUserPosts = async () => {
     console.log(userData)
     console.log(user)
-    const res = await axios.get(`${BASE_URL}/feed/profile/${user.id}`)
+    const res = await Client.get(`${BASE_URL}/feed/profile/${user.id}`)
     console.log(res.data)
     setAllUserPosts(res.data)
   }
@@ -72,13 +79,15 @@ function App() {
     setTokenString(token)
     if (token) {
       checkToken()
-      getUserData()
-      getAllPosts()
-      if (userData) {
+      console.log(user)
+      console.log(authenticated)
+      if (user) {
+        getUserData()
+        getAllPosts()
         getUserPosts()
       }
     }
-  }, [useEffectToggler])
+  }, [useEffectToggler, authenticated])
 
   return (
     <div className="App">
@@ -105,7 +114,14 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route
           path="/newpost"
-          element={<CreatePost user={userData} token={tokenString} />}
+          element={
+            <CreatePost
+              user={userData}
+              token={tokenString}
+              useEffectToggler={useEffectToggler}
+              setUseEffectToggler={setUseEffectToggler}
+            />
+          }
         />
         <Route
           path="/feed"
