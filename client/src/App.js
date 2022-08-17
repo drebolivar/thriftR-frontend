@@ -22,6 +22,7 @@ function App() {
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
   const [useEffectToggler, setUseEffectToggler] = useState(false)
+  const [tokenString, setTokenString] = useState('')
 
   //gets full user data including prof pic from the user variable(which is just payload)
   const getUserData = async () => {
@@ -68,6 +69,7 @@ function App() {
   }
   useEffect(() => {
     const token = localStorage.getItem('token')
+    setTokenString(token)
     if (token) {
       checkToken()
       getUserData()
@@ -99,7 +101,10 @@ function App() {
           }
         />
         <Route path="/register" element={<Register />} />
-        <Route path="/newpost" element={<CreatePost user={userData} />} />
+        <Route
+          path="/newpost"
+          element={<CreatePost user={userData} token={tokenString} />}
+        />
         <Route
           path="/feed"
           element={
