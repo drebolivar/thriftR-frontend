@@ -24,7 +24,7 @@ export default function Feed(props) {
     )
   ) : (
     <div className="protected">
-      <h3>Oops! You must be signed in to do that!</h3>
+      <h3>Oops! All errors!</h3>
       <button onClick={() => navigate('/signin')}>Sign In</button>
     </div>
   )

@@ -68,16 +68,9 @@ function App() {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
-    }
-  }, [])
-
-  useEffect(() => {
-    if (user) {
       getUserData()
       getAllPosts()
-      if (userData) {
-        getUserPosts()
-      }
+      getUserPosts()
     }
   }, [useEffectToggler])
 
@@ -90,7 +83,6 @@ function App() {
       />
       <img src={logo} alt="logo" />
       <Routes>
-        <Route path="/" element={<Feed posts={allPosts} />} />
         <Route
           path="/signin"
           element={
