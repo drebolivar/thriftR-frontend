@@ -5,8 +5,12 @@ export default function Feed(props) {
   let navigate = useNavigate()
   return props.user && props.authenticated ? (
     props.posts ? (
-      <div>
+      <div className='feedpost'>
         <h1>I am the Feed</h1>
+        <div class="card"></div>
+	<div class="card-content"></div>
+		<header class="card-content_header"></header>
+
         <section>
           {props.posts.map((currentPost) => (
             <div key={currentPost.id} className="posts">
@@ -21,9 +25,11 @@ export default function Feed(props) {
       </div>
     )
   ) : (
-    <div className="protected">
-      <h3>Oops! All errors!</h3>
-      <button onClick={() => navigate('/signin')}>Sign In</button>
+    <div className="feederror">
+    <div>
+      <h3 className="protected">Oops! All errors!</h3>
+      <button className="signinfeed" onClick={() => navigate('/signin')}>Sign In</button>
+    </div>
     </div>
   )
 }

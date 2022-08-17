@@ -23,6 +23,7 @@ const SignIn = (props) => {
   }
 
   return (
+    <div className='signinpage'>
     <div className="signin">
       <div className="brand-logo"></div>
       <div className="brand-title"></div>
@@ -60,11 +61,12 @@ const SignIn = (props) => {
               Not registered? <a href="/register">Create an account</a>
             </p>
           </div>
-          <button disabled={!formValues.email || !formValues.password}>
+          <button className="singinbutton" disabled={!formValues.email || !formValues.password}>
             Sign In
           </button>
         </form>
       </div>
+    </div>
     </div>
   )
 }

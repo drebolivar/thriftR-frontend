@@ -33,15 +33,15 @@ export default function CreatePost (props) {
   }
 
   return (
-    <div>
-      <form className="col" onSubmit={handlePostSubmit}>
+    <div className='createpostpage'>
+      <form className="createpost" onSubmit={handlePostSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="image">Image:</label>
+            <label htmlFor="image">Image</label>
             <input
               onChange={handlePostChange}
               name="imgSrc"
               type="text"
-              placeholder="Img URL"
+              placeholder="image URL"
               value={newPostValues.imgSrc}
               required
             />
