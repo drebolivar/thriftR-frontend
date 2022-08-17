@@ -88,7 +88,7 @@ function App() {
         handleLogOut={handleLogOut}
       />
       <div className="logo">
-      <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" />
       </div>
       <Routes>
         <Route
