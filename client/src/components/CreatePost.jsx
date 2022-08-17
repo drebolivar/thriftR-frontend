@@ -32,7 +32,7 @@ export default function CreatePost (props) {
   }
 
   return (
-    <div>
+    <div className='createpostpage'>
       <form className="createpost" onSubmit={handlePostSubmit}>
           <div className="input-wrapper">
             <label htmlFor="image">Image</label>

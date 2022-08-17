@@ -37,39 +37,35 @@
   }
 }
 body{
-  background-image: url(https://i.imgur.com/PmL9yke.jpg);
- 
+  background: url(https://i.imgur.com/PmL9yke.jpg);
+  justify-content: center;
+  display: flex;
+  display: grid;
+  align-items: center;
+
 }
-.register{
+.register, .signin{
   justify-content: center;
   display: flex;
   display: grid;
   font-family: 'DynaPuff', cursive;
   color: rgb(43, 10, 89);
-  /* position: relative; */
+  position: relative;
   width: 350px;
-  height: 500px;
+  height: 560px;
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 14px 14px 20px rgb(43, 10, 89), -14px -14px 20px rgb(43, 10, 89);
 }
-.signin{
+.signinpage, .registerpage{
   justify-content: center;
   display: flex;
   display: grid;
-  font-family: 'DynaPuff', cursive;
-  color: rgb(43, 10, 89);
-  /* position: relative; */
-  width: 350px;
-  height: 425px;
-  border-radius: 20px;
-  padding: 10px;
-  box-sizing: border-box;
-  background: #ecf0f3;
-  box-shadow: 14px 14px 20px rgb(43, 10, 89), -14px -14px 20px rgb(43, 10, 89);
+  align-items: center;
 }
+
 .brand-logo {
   height: 105px;
   width: 105px;
@@ -118,7 +114,7 @@ input {
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
-button {
+ button {
   font-family: 'DynaPuff', cursive;
   color: rgb(43, 10, 89);
   margin-top: 20px;
@@ -134,7 +130,7 @@ button {
 button:hover {
   box-shadow: none;
 }
-.feed{
+.feed, .profile, .newpost{
     font-family: 'DynaPuff', cursive;
 }
 .protected{
@@ -144,21 +140,32 @@ button:hover {
   font-family: 'DynaPuff', cursive;
   color: rgb(43, 10, 89);
   background: white;
-  width: 250px;
-  height: 100px;
+  width: 350px;
+  height: 90px;
   border-radius: 20px;
   padding: 10px;
   box-sizing: border-box;
 }
-.post{
+.feederror{
+  justify-content: center;
+  display: flex;
+  display: grid;
+  align-items: center;
+}
+.signinfeed{
+  margin-top: -3.5rem;
+  width: -20rem;
+}
+/* .post{
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 14px 14px 20px rgb(43, 10, 89), -14px -14px 20px rgb(43, 10, 89);
-}
+} */
 .createpost{
   justify-content: center;
   display: flex;
   display: grid;
+  align-items: center;
   font-family: 'DynaPuff', cursive;
   color: rgb(43, 10, 89);
   /* position: relative; */
@@ -169,6 +176,12 @@ button:hover {
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 14px 14px 20px rgb(43, 10, 89), -14px -14px 20px rgb(43, 10, 89);
+}
+.createpostpage{
+  justify-content: center;
+  display: flex;
+  display: grid;
+  align-items: center;
 }
 .wrapper {
   display: inline-flex;
@@ -231,38 +244,95 @@ button:hover {
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before {
+.wrapper .feed:hover,
+.wrapper .feed:hover .tooltip,
+.wrapper .feed:hover .tooltip::before {
   background: #1877F2;
   color: #ffffff;
 }
 
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
+.wrapper .profile:hover,
+.wrapper .profile:hover .tooltip,
+.wrapper .profile:hover .tooltip::before {
   background: #1DA1F2;
   color: #ffffff;
 }
 
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip::before {
+.wrapper .newpost:hover,
+.wrapper .newpost:hover .tooltip,
+.wrapper .newpost:hover .tooltip::before {
   background: #E4405F;
   color: #ffffff;
 }
 
-.wrapper .github:hover,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip::before {
+.wrapper .sign-up:hover,
+.wrapper .sign-up:hover .tooltip,
+.wrapper .sign-up:hover .tooltip::before {
   background: #333333;
   color: #ffffff;
 }
 
-.wrapper .youtube:hover,
-.wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip::before {
+.wrapper .sign-in:hover,
+.wrapper .sign-in:hover .tooltip,
+.wrapper .sign-in:hover .tooltip::before {
   background: #CD201F;
   color: #ffffff;
+}
+.posts{
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	background: #fff;
+	width: 580px;
+	height: 410px;
+	border: 1px solid #e6ecf0;
+	border-radius: 3px;
+	padding: 9px 12px;
+}
+	.cardcontent{
+		margin-left: 58px;
+		width: auto;
+		height: 100%;
+		background: #fBfBfB;
+  }
+	.header{
+			width: 100%;
+		}
+	
+	.user{
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		word-wrap: normal;
+  }
+	.name{
+			color: #14171a;
+			font-size: 14px;
+			font-weight: bold;
+  }
+  .logo{
+    block-size: -4rem;
+  }
+	a{
+    text-decoration: none;
+  }
+.likes{
+  width: 3rem;
+}
+.likesedits{
+  margin-top: -2.5rem;
+  margin-left: 1rem
+}
+
+.like {
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  border-radius: 999px;
+  overflow: visible;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 

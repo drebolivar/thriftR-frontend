@@ -32,6 +32,7 @@ const Register = () => {
   }
 
   return (
+    <div className='registerpage'>
     <div className="register">
       <h1>Register</h1>
       <div className="card-overlay centered">
@@ -91,7 +92,11 @@ const Register = () => {
               required
             />
           </div>
+          <div className="createAccount">
+            <p>registered? <a href="/signin">Sign In</a></p>
+          </div>
           <button
+           className="signupbutton"
             disabled={
               !formValues.email ||
               (!formValues.password &&
@@ -102,6 +107,7 @@ const Register = () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   )
 }

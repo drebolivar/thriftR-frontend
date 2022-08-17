@@ -2,21 +2,25 @@ import {Link} from 'react-router-dom'
 
 export default function Nav (props) {
 return props.signedIn && props.user ? (
-  <header className="header">
+  <header className="wrapper">
   <nav className="navbar">
     <ul className="mainnav">
-    <Link className="nav-item active" to='/feed'>Feed</Link>
-    <Link className="nav-item active" to='/myprofile'>Profile</Link>
-    <Link className="nav-item active" to='/newpost'>New Post</Link>
-    <button className="nav-item active" onClick={props.handleLogOut}>Log Out</button>
-    <h1 className="nav-item active"> Welcome {props.user.username}</h1>
+    <Link  to='/feed'><button className="icon">Feed</button></Link>
+    <Link to='/myprofile'><button className="icon">Profile</button></Link>
+    <Link  to='/newpost'><button className="icon">New Post</button></Link>
+    <button className="logout icon" onClick={props.handleLogOut}>Log Out</button>
+    <h1 className="welcome"> Welcome {props.user.username}</h1>
     </ul>
   </nav>
   </header>
 ) : (
   <nav>
-    <Link className="nav-item active" to='/register'>Sign Up</Link>
-    <Link className="nav-item active" to='/signin'>Sign In</Link>
+   {/* <Link to='/register'>
+    <button className="icon">Register</button>
+   </Link>
+    <Link to='/signin'>
+      <button className="icon">Sign In</button>
+    </Link> */}
   </nav>
 )
 }
