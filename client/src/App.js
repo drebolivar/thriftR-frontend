@@ -95,7 +95,10 @@ function App() {
           }
         />
         <Route path="/register" element={<Register />} />
-        <Route path="/newpost" element={<CreatePost />} />
+        <Route
+          path="/newpost"
+          element={<CreatePost user={userData} authenticated={authenticated} />}
+        />
         <Route
           path="/feed"
           element={
