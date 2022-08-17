@@ -336,3 +336,8 @@ button:hover {
   -webkit-tap-highlight-color: transparent;
 }
 
+.postcard-container{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between
+}
