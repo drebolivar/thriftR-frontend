@@ -60,7 +60,7 @@ function App() {
   const getUserPosts = async () => {
     console.log(userData)
     console.log(user)
-    const res = await axios.get(`${BASE_URL}/feed/profile/${userData.id}`)
+    const res = await axios.get(`${BASE_URL}/feed/profile/${user.id}`)
     console.log(res.data)
     setAllUserPosts(res.data)
   }
@@ -106,7 +106,16 @@ function App() {
             />
           }
         />
-        <Route path="/myprofile" element={<Profile posts={allUserPosts} />} />
+        <Route
+          path="/myprofile"
+          element={
+            <Profile
+              user={userData}
+              authenticated={authenticated}
+              posts={allUserPosts}
+            />
+          }
+        />
       </Routes>
     </div>
   )
