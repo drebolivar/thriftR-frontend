@@ -19,7 +19,7 @@ export default function PostCard (props) {
       {/* <section>Add comment</section> */}
       <section>
         {props.post.Comments.map((currentComment) => (
-          <div>
+          <div key={currentComment.id}>
             <Comments comment={currentComment}/>
           </div>
         ))}

@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Feed(props) {
   let navigate = useNavigate()
+  console.log(props.user)
+  console.log(props.authenticated)
   return props.user && props.authenticated ? (
     props.posts ? (
       <div>
@@ -10,7 +12,7 @@ export default function Feed(props) {
         <section>
           {props.posts.map((currentPost) => (
             <div key={currentPost.id} className="posts">
-              <PostCard post={currentPost} />
+              <PostCard post={currentPost} user={props.user} />
             </div>
           ))}
         </section>

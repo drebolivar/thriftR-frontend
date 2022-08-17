@@ -14,20 +14,28 @@ import { CheckSession } from './services/Auth'
 import { useNavigate } from 'react-router-dom'
 
 function App() {
-
   let navigate = useNavigate()
+
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
+  const [userData, setUserData] = useState(null)
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
-  const getUser = async () => {
+  const [useEffectToggler, setUseEffectToggler] = useState(false)
+
+  //gets full user data including prof pic from the user variable(which is just payload)
+  const getUserData = async () => {
+    console.log(user)
     const res = await axios.get(`${BASE_URL}/users/${user.id}`)
     console.log(res.data)
-    setUser(res.data)
+    setUserData(res.data)
   }
+
+  //gets all posts regardless of user
   const getAllPosts = async () => {
     const res = await axios.get(`${BASE_URL}/feed/`)
     console.log(res.data)
+    console.log(user)
     setAllPosts(res.data)
   }
   const handleLogOut = () => {
@@ -38,31 +46,48 @@ function App() {
     toggleAuthenticated(false)
     localStorage.clear()
   }
+
+  //checks to see if there is a valid token in the local storage and if so sets user to the token
   const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
+    const tokenUser = await CheckSession()
+    console.log(tokenUser)
+    setUser(tokenUser)
+    console.log(user)
     toggleAuthenticated(true)
   }
 
+  //gets all posts of the currently logged in user
   const getUserPosts = async () => {
+    console.log(userData)
     console.log(user)
-    const res = await axios.get(`${BASE_URL}/feed/profile/${user.id}`)
+    const res = await axios.get(`${BASE_URL}/feed/profile/${userData.id}`)
     console.log(res.data)
     setAllUserPosts(res.data)
   }
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
-      console.log(user)
       checkToken()
-      // getUser()
-      getAllPosts()
-      getUserPosts()
     }
-  }, [user])
+  }, [])
+
+  useEffect(() => {
+    if (user) {
+      getUserData()
+      getAllPosts()
+      if (userData) {
+        getUserPosts()
+      }
+    }
+  }, [useEffectToggler])
+
   return (
     <div className="App">
-      <Nav signedIn={authenticated} user={user} handleLogOut={handleLogOut} />
+      <Nav
+        signedIn={authenticated}
+        user={userData}
+        handleLogOut={handleLogOut}
+      />
       <img src={logo} alt="logo" />
       <Routes>
         <Route path="/" element={<Feed posts={allPosts} />} />
@@ -72,6 +97,8 @@ function App() {
             <SignIn
               setUser={setUser}
               toggleAuthenticated={toggleAuthenticated}
+              setUseEffectToggler={setUseEffectToggler}
+              useEffectToggler={useEffectToggler}
             />
           }
         />
@@ -80,10 +107,14 @@ function App() {
         <Route
           path="/feed"
           element={
-            <Feed user={user} posts={allPosts} authenticated={authenticated} />
+            <Feed
+              user={userData}
+              posts={allPosts}
+              authenticated={authenticated}
+            />
           }
         />
-        <Route path="/profile/:id" element={<Profile posts={allUserPosts} />} />
+        <Route path="/myprofile" element={<Profile posts={allUserPosts} />} />
       </Routes>
     </div>
   )
