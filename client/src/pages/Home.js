@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-// import Felix from '../assets/felixsmol.png'
 import LogoASCII from '../assets/thriftrlogoascii.png'
 
 const Home = () => {
@@ -16,13 +15,6 @@ const Home = () => {
           <a href="/register">Create an account</a>
         </h3>
       </div>
-      {/* <div className="felix">
-        <img
-          style={{ display: 'block', maxHeight: '50%' }}
-          src={Felix}
-          alt="felix flea"
-        />
-      </div> */}
     </div>
   )
 }

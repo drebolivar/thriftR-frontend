@@ -179,7 +179,7 @@ font-family: 'DynaPuff', cursive;
   list-style: none;
 }
 
-.wrapper .icon {
+.icon {
   position: relative;
   background: #ffffff;
   border-radius: 50%;
@@ -365,17 +365,11 @@ header{
   border-top: 1px solid #ccc;
   padding-top:.5rem;
 }
-.comments-btn{
-  color: #999;
-  cursor:pointer;
-}
-.comment-container{
-  flex-grow: 1;
-  height:100%;
-}
 .feedpost{
+  margin-left: 25rem;
   block-size: auto;
   justify-content: center;
+  align-items: center;
   margin: 0 20% 0 20%;
 }
 .homepage{
@@ -390,8 +384,6 @@ header{
   color: 'green';
   font-size: 30px;
 }
-
-
 .mainnav{
   display: flex;
   flex-direction: row;
@@ -406,6 +398,13 @@ header{
 }
 
 .caption{
+margin-top: -4rem;
+margin-bottom: -10rem;
+max-width: 80%;
+max-height: 80%
+}
+.card-img-container{
+  margin: 9rem;
   margin-bottom: 2rem;
   max-width: 80%;
   max-height: 80%;
@@ -416,5 +415,6 @@ header{
   margin-bottom: 10%;
   background: white;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
+
