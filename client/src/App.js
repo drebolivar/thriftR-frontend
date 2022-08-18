@@ -88,6 +88,7 @@ function App() {
       {/* <div className="logo">
         <img src={logo} alt="logo" />
       </div> */}
+
       <Routes>
         <Route
           path="/signin"
