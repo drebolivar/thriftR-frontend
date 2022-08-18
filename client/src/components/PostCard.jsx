@@ -38,7 +38,7 @@ export default function PostCard (props) {
   }
 
   return props.post ? (
-    <div className="post">
+    <div>
       <div className="header-img-container flex-container">
         <img src={props.post.User.profileImg} alt='profilepic' className='profilepicfeed' style={{height: '30px', width: '30px'}}/>
         <span className="card-title">
@@ -49,16 +49,15 @@ export default function PostCard (props) {
         <img src={props.post.imgSrc} alt='post' className='post-image'/>
         <p className='caption'>{props.post.captions}</p>
       </div>
-      <div className="likesedits">
+      <div className="button-container">
         <button className="likes" onClick={updateLikes}>{props.post.numLikes}<br></br>Likes</button>
-        </div>
-      <div className="trash">
-      <button onClick={deletePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Delete</button>
+      
+      <button className="likes"onClick={deletePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Delete</button>
+      
+      <button className="likes" onClick={updatePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Update Post</button>
       </div>
-      <div className="updatePost">
-      <button onClick={updatePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Update Post</button>
       <UpdatePost post={props.post} visible={visible} setVisible={setVisible}/>
-      </div>
+    
 
 
       <CreateComment postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>

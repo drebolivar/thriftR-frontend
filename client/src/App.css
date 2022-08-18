@@ -225,9 +225,13 @@ font-family: 'DynaPuff', cursive;
 
 .likes{
   width: 3rem;
+  margin: 5px;
 }
 
-.likesedits{
+.button-container{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items:flex-end;
   margin-top: -2.5rem;
   margin-left: 1rem
 }
@@ -324,24 +328,10 @@ a{
   font-size: 2.4rem;
   cursor: pointer;
 }
-/* .card-icon-left{
-  justify-content: start;
-} */
-/* .card-text{
-  width:100%;
-  text-align:left;
-  margin: .5rem 0;
-  font-size: 1.4rem;
-} */
+
 .title-margin{
   margin-right: .4rem;
 }
-/* .add-comment-container{
-  width: 100%;
-  gap: 1rem;
-  border-top: 1px solid #ccc;
-  padding-top:.5rem;
-} */
 .feedpost{
   margin-left: 25rem;
   block-size: auto;
@@ -366,10 +356,8 @@ a{
   flex-direction: row;
   height: auto;
   background-color:crimson;
-
 }
 .post-image{
-
   max-width: 70%;
   max-height: 70%;
 }
@@ -383,19 +371,26 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
-/* .posts{
+.posts{
+  width: 140%;
   margin-top: 10%;
   margin-bottom: 10%;
   background: white;
   justify-content: center;
   align-items: center;
-} */
-/* post{
-  margin-top: 10%;
-  margin-bottom: 10%;
-  background-color: white;
   justify-content: center;
-  align-items: center;
-} */
+  display: grid;
+  font-family: 'DynaPuff', cursive;
+  color: rgb(43, 10, 89);
+  position: relative;
+  width: 130%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px rgb(43, 10, 89), -14px -14px 20px rgb(43, 10, 89);
+}
+
 
 
