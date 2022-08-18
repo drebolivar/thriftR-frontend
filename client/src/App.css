@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 .App {
   text-align: center;
 }
@@ -344,4 +346,17 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.homepage{
+  display: flex;
+  color: green;
+}
+
+.welcome{
+  background-color: rgb(35, 35, 35);
+  border: white 5px dashed;
+  font-family: 'VT323';
+  color: 'green';
+  font-size: 30px;
 }
