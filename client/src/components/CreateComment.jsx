@@ -17,7 +17,7 @@ export default function CreateComment (props) {
   const [newCommentValues, setNewCommentValues] = useState(initialCommentValues)
 
   const handleCommentChange = (e) => {
-    setNewCommentValues({ ...newPostValues, [e.target.name]: e.target.value })
+    setNewCommentValues({ ...newCommentValues, [e.target.name]: e.target.value })
     console.log(newCommentValues)
   }
 
@@ -25,7 +25,8 @@ export default function CreateComment (props) {
     e.preventDefault()
     let res = await Client.post(`${BASE_URL}/comment`, newCommentValues)
     setNewCommentValues(initialCommentValues)
-    // navigate('/feed')
+    props.setUseEffectToggler(!props.useEffectToggler)
+    navigate('/feed')
   }
 
   return (

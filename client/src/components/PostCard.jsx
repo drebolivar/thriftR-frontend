@@ -1,4 +1,5 @@
 import Comments from "./Comments"
+import CreateComment from "./CreateComment"
 
 
 export default function PostCard (props) {
@@ -18,6 +19,7 @@ export default function PostCard (props) {
         <p className='caption'>{props.post.captions}</p>
       </div>
       {/* <section>Add comment</section> */}
+      <CreateComment postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
       <section>
         {props.post.Comments.map((currentComment) => (
           <div key={currentComment.id}>
