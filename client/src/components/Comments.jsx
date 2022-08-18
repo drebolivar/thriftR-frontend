@@ -22,6 +22,7 @@ export default function Comments (props) {
   const deleteComment = () => {
     Client.delete(`${BASE_URL}/comment/${currentComment.id}`)
     props.setUseEffectToggler(!props.useEffectToggler) 
+    navigate('/feed')
   }
 
   const updateLikes = () => {
