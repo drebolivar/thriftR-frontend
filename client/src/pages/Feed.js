@@ -7,9 +7,6 @@ export default function Feed(props) {
     props.posts ? (
       <div className="feedpost">
         <h1>I am the Feed</h1>
-        <div class="card"></div>
-        <div class="card-content"></div>
-        <header class="card-content_header"></header>
         <section className="postcard-container">
           {props.posts.map((currentPost) => (
             <div key={currentPost.id} className="posts">
