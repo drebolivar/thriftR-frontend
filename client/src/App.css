@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 .App {
   text-align: center;
 }
@@ -335,6 +337,7 @@ button:hover {
   flex-direction: column;
   justify-content: space-between;
 }
+
 html{
   font-size: 10px;
   font-family: 'Poppins', sans-serif;
@@ -486,3 +489,18 @@ header{
   max-width: 80%;
   max-height: 80%;
 }
+
+
+.homepage{
+  display: flex;
+  color: green;
+}
+
+.welcome{
+  background-color: rgb(35, 35, 35);
+  border: white 5px dashed;
+  font-family: 'VT323';
+  color: 'green';
+  font-size: 30px;
+}
+

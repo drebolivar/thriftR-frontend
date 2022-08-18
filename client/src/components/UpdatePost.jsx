@@ -22,8 +22,9 @@ export default function UpdatePost (props) {
   const handlePostUpdate = async (e) => {
     e.preventDefault()
     let res = await Client.put(`${BASE_URL}/feed/${props.post.id}`, updatedPost)
+    console.log(res)
     setUpdatedPost(initialPostValues)
-    props.setUseEffectToggler(!props.setUseEffectToggler)
+    props.setUseEffectToggler(!props.useEffectToggler)
     props.setVisible(false)
     navigate('/myprofile')
   }

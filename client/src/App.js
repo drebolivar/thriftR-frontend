@@ -28,60 +28,48 @@ function App() {
 
   //gets full user data including prof pic from the user variable(which is just payload)
   const getUserData = async () => {
-    console.log(user)
     const res = await Client.get(`${BASE_URL}/users/${user.id}`)
-    console.log(res.data)
     setUserData(res.data)
-    const result = await Client.get(`${BASE_URL}/feed/profile/${user.id}`)
-    setAllUserPosts(result.data)
   }
 
   //gets all posts regardless of user
   const getAllPosts = async () => {
     const res = await Client.get(`${BASE_URL}/feed/`)
-    console.log(res.data)
-    console.log(user)
-    setAllPosts(res.data)
+    let posts = res.data
+    posts.sort((a, b) => {
+      return b.id - a.id
+    })
+    setAllPosts(posts)
   }
   const handleLogOut = () => {
     //Reset all auth related state and clear localStorage
-    console.log(user)
-    console.log(authenticated)
     setUser(null)
-    console.log(user)
     toggleAuthenticated(false)
-    console.log(authenticated)
     localStorage.clear()
   }
 
   //checks to see if there is a valid token in the local storage and if so sets user to the token
   const checkToken = async () => {
     const user = await CheckSession()
-    console.log(user)
     setUser(user)
-    authenticationToggler()
-  }
-
-  const authenticationToggler = () => {
-    console.log('I am the authentication toggler')
     toggleAuthenticated(true)
   }
 
   //gets all posts of the currently logged in user
   const getUserPosts = async () => {
-    console.log(userData)
-    console.log(user)
-    const res = await Client.get(`${BASE_URL}/feed/profile/${user.id}`)
-    console.log(res.data)
-    setAllUserPosts(res.data)
+    const result = await Client.get(`${BASE_URL}/feed/profile/${user.id}`)
+    let posts = result.data
+    posts.sort((a, b) => {
+      return b.id - a.id
+    })
+    setAllUserPosts(posts)
   }
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     setTokenString(token)
     if (token) {
       checkToken()
-      console.log(user)
-      console.log(authenticated)
       if (user) {
         getUserData()
         getAllPosts()
@@ -97,6 +85,10 @@ function App() {
         user={userData}
         handleLogOut={handleLogOut}
       />
+      {/* <div className="logo">
+        <img src={logo} alt="logo" />
+      </div> */}
+
       <Routes>
         <Route
           path="/signin"

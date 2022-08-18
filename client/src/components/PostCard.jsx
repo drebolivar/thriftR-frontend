@@ -53,12 +53,11 @@ export default function PostCard (props) {
       <button onClick={updatePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Update Post</button>
       <UpdatePost post={props.post} visible={visible} setVisible={setVisible}/>
       </div>
-      {/* <section>Add comment</section> */}
       <CreateComment postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
       <section className="card-text">
         {props.post.Comments.map((currentComment) => (
           <div className="comments" key={currentComment.id}>
-            <Comments comment={currentComment} userId={props.user.id}/>
+            <Comments comment={currentComment} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
             </div>
         ))}
       </section>
