@@ -7,6 +7,7 @@ import Feed from './pages/Feed'
 import Profile from './pages/Profile'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
+import Home from './pages/Home'
 import CreatePost from './components/CreatePost'
 import Client from './services/api'
 import { BASE_URL } from './services/api'
@@ -96,9 +97,6 @@ function App() {
         user={userData}
         handleLogOut={handleLogOut}
       />
-      <div className="logo">
-        <img src={logo} alt="logo" />
-      </div>
       <Routes>
         <Route
           path="/signin"
@@ -145,6 +143,7 @@ function App() {
             />
           }
         />
+        <Route path="/" element={<Home />} />
       </Routes>
     </div>
   )

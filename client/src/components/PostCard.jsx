@@ -2,13 +2,21 @@ import Comments from "./Comments"
 import CreateComment from "./CreateComment"
 import Client from "../services/api"
 import { BASE_URL } from "../services/api"
+import UpdatePost from "./UpdatePost"
+import { useState } from "react"
 
 
 export default function PostCard (props) {
 
+  let [visible, setVisible] = useState(false)
+
   const deletePost = () => {
     Client.delete(`${BASE_URL}/feed/${props.post.id}`)
-    props.setUseEffectToggler(!props.setUseEffectToggler)
+    props.setUseEffectToggler(!props.setUseEffectToggler) 
+  }
+
+  const updatePost = () => {
+    setVisible(true)
   }
 
   return props.post ? (
@@ -32,26 +40,22 @@ export default function PostCard (props) {
       <div className="card-img-container">
       <div className="post-body">
         <img src={props.post.imgSrc} alt='post' className="post"/>
-        
+        </div>
         <div className="likesedits">
         <button className="likes">{props.post.numLikes}<br></br>Likes</button>
         </div>
         <p className='caption'>{props.post.captions}</p>
       </div>
-      <div className="card-opt-btn flex-container"><i class="bi bi-three-dots"></i>
       <button onClick={deletePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Delete</button>
-      </div>
-      </div>
-      <span className="card-text"><span className="bold title-margin">
+      <button onClick={updatePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Update Post</button>
+      <UpdatePost post={props.post} visible={visible} setVisible={setVisible}/>
       {/* <section>Add comment</section> */}
       <CreateComment postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
-      </span>
-      </span>
-      <section>
+      <section className="card-text">
         {props.post.Comments.map((currentComment) => (
           <div key={currentComment.id}>
-            <Comments comment={currentComment}/>
-          </div>
+            <Comments comment={currentComment} userId={props.user.id}/>
+            </div>
         ))}
       </section>
     </div>

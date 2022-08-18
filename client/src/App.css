@@ -278,7 +278,7 @@ button:hover {
   background: #CD201F;
   color: #ffffff;
 }
-/* .posts{
+/* .feedposts{
 	position: relative;
 	margin: 0 auto;
 	display: block;
@@ -337,7 +337,7 @@ button:hover {
 }
 .post{
   max-width: 80%;
-  height: auto;
+  max-height: 80%;
 }
 
 .postcard-container{
@@ -465,6 +465,12 @@ header{
   grid-template-columns: 10% 1fr 10%;
   grid-template-rows: minmax(0, 1fr);
   height: 56.5px;
+}
+.card-text{
+  width:100%;
+  text-align:left;
+  margin: .5rem 0;
+  font-size: 1.4rem;
 }
 
 .card-title{
