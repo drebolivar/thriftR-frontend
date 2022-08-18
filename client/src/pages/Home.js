@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import Felix from '../assets/felixsmol.png'
 import LogoASCII from '../assets/thriftrlogoascii.png'
 
 const Home = () => {

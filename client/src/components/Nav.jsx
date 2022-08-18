@@ -17,14 +17,5 @@ return props.signedIn && props.user ? (
     <h1 className="welcome"> Welcome {props.user.username}</h1>
   </nav>
   </header>
-) : (
-  <nav>
-   {/* <Link to='/register'>
-    <button className="icon">Register</button>
-   </Link>
-    <Link to='/signin'>
-      <button className="icon">Sign In</button>
-    </Link> */}
-  </nav>
-)
+) : null
 }
