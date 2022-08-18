@@ -46,6 +46,7 @@ function App() {
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
+    navigate('/')
   }
 
   //checks to see if there is a valid token in the local storage and if so sets user to the token

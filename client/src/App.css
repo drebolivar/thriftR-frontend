@@ -42,7 +42,6 @@ body{
   background: url(https://i.imgur.com/PmL9yke.jpg);
   justify-content: center;
   display: flex;
-  display: grid;
   align-items: center;
 
 }
@@ -353,7 +352,7 @@ button:hover {
   color: green;
 }
 
-.welcome{
+.welcomescreen{
   background-color: rgb(35, 35, 35);
   border: white 5px dashed;
   font-family: 'VT323';
