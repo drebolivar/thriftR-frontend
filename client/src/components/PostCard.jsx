@@ -2,13 +2,21 @@ import Comments from "./Comments"
 import CreateComment from "./CreateComment"
 import Client from "../services/api"
 import { BASE_URL } from "../services/api"
+import UpdatePost from "./UpdatePost"
+import { useState } from "react"
 
 
 export default function PostCard (props) {
 
+  let [visible, setVisible] = useState(false)
+
   const deletePost = () => {
     Client.delete(`${BASE_URL}/feed/${props.post.id}`)
     props.setUseEffectToggler(!props.setUseEffectToggler) 
+  }
+
+  const updatePost = () => {
+    setVisible(true)
   }
 
   return props.post ? (
@@ -25,6 +33,8 @@ export default function PostCard (props) {
         <p className='caption'>{props.post.captions}</p>
       </div>
       <button onClick={deletePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Delete</button>
+      <button onClick={updatePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Update Post</button>
+      <UpdatePost post={props.post} visible={visible} setVisible={setVisible}/>
       {/* <section>Add comment</section> */}
       <CreateComment postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
       <section>
