@@ -335,6 +335,10 @@ button:hover {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
+.post{
+  max-width: 80%;
+  height: auto;
+}
 
 .postcard-container{
   display: flex;
