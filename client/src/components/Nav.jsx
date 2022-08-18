@@ -5,7 +5,7 @@ import Logo from '../assets/thriftrlogobar.png'
 export default function Nav (props) {
 return props.signedIn && props.user ? (
   <header className="wrapper">
-  <nav className="navbar">
+  <nav className="nav">
     <ul className="mainnav">
     <img src={ Logo }/> 
     <Link  to='/feed'><button className="icon">Feed</button></Link>

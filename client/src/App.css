@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  font-family: 'DynaPuff', cursive;
 }
 
 .App-logo {
@@ -16,6 +17,7 @@
 }
 
 .App-header {
+  font-family: 'DynaPuff', cursive;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -43,11 +45,10 @@ body{
   justify-content: center;
   display: flex;
   align-items: center;
-
+  font-family: 'DynaPuff', cursive;
 }
 .register, .signin{
   justify-content: center;
-  display: flex;
   display: grid;
   font-family: 'DynaPuff', cursive;
   color: rgb(43, 10, 89);
@@ -61,8 +62,8 @@ body{
   box-shadow: 14px 14px 20px rgb(43, 10, 89), -14px -14px 20px rgb(43, 10, 89);
 }
 .signinpage, .registerpage{
+  font-family: 'DynaPuff', cursive;
   justify-content: center;
-  display: flex;
   display: grid;
   align-items: center;
 }
@@ -132,11 +133,10 @@ button:hover {
   box-shadow: none;
 }
 .feed, .profile, .newpost{
-    font-family: 'DynaPuff', cursive;
+font-family: 'DynaPuff', cursive;
 }
 .protected{
   justify-content: center;
-  display: flex;
   display: grid;
   font-family: 'DynaPuff', cursive;
   color: rgb(43, 10, 89);
@@ -149,7 +149,6 @@ button:hover {
 }
 .feederror{
   justify-content: center;
-  display: flex;
   display: grid;
   align-items: center;
 }
@@ -157,19 +156,12 @@ button:hover {
   margin-top: -3.5rem;
   width: -20rem;
 }
-/* .post{
-  box-sizing: border-box;
-  background: #ecf0f3;
-  box-shadow: 14px 14px 20px rgb(43, 10, 89), -14px -14px 20px rgb(43, 10, 89);
-} */
 .createpost{
   justify-content: center;
-  display: flex;
   display: grid;
   align-items: center;
   font-family: 'DynaPuff', cursive;
   color: rgb(43, 10, 89);
-  /* position: relative; */
   width: 350px;
   height: 425px;
   border-radius: 20px;
@@ -180,7 +172,6 @@ button:hover {
 }
 .createpostpage{
   justify-content: center;
-  display: flex;
   display: grid;
   align-items: center;
 }
@@ -223,7 +214,6 @@ button:hover {
 
 .wrapper .tooltip::before {
   position: absolute;
-  content: "";
   height: 8px;
   width: 8px;
   background: #ffffff;
@@ -232,87 +222,7 @@ button:hover {
   transform: translate(-50%) rotate(45deg);
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
-.wrapper .icon:hover .tooltip {
-  top: -45px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.wrapper .feed:hover,
-.wrapper .feed:hover .tooltip,
-.wrapper .feed:hover .tooltip::before {
-  background: #1877F2;
-  color: #ffffff;
-}
-
-.wrapper .profile:hover,
-.wrapper .profile:hover .tooltip,
-.wrapper .profile:hover .tooltip::before {
-  background: #1DA1F2;
-  color: #ffffff;
-}
-
-.wrapper .newpost:hover,
-.wrapper .newpost:hover .tooltip,
-.wrapper .newpost:hover .tooltip::before {
-  background: #E4405F;
-  color: #ffffff;
-}
-
-.wrapper .sign-up:hover,
-.wrapper .sign-up:hover .tooltip,
-.wrapper .sign-up:hover .tooltip::before {
-  background: #333333;
-  color: #ffffff;
-}
-
-.wrapper .sign-in:hover,
-.wrapper .sign-in:hover .tooltip,
-.wrapper .sign-in:hover .tooltip::before {
-  background: #CD201F;
-  color: #ffffff;
-}
-.posts{
-	position: relative;
-	margin: 0 auto;
-	display: block;
-	background: #fff;
-	width: 580px;
-	height: 410px;
-	border: 1px solid #e6ecf0;
-	border-radius: 3px;
-	padding: 9px 12px;
-}
-	.cardcontent{
-		margin-left: 58px;
-		width: auto;
-		height: 100%;
-		background: #fBfBfB;
-  }
-	.header{
-			width: 100%;
-		}
-	
-	.user{
-		max-width: 100%;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		word-wrap: normal;
-  }
-	.name{
-			color: #14171a;
-			font-size: 14px;
-			font-weight: bold;
-  }
-  .logo{
+.logo{
     block-size: -4rem;
   }
 
@@ -331,25 +241,144 @@ button:hover {
 
 .like {
   display: block;
-  width: var(--size);
-  height: var(--size);
   cursor: pointer;
-  border-radius: 999px;
   overflow: visible;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
 }
-.post{
-  max-width: 80%;
-  height: auto;
-}
-
 .postcard-container{
   display: flex;
   flex-direction: column;
+  margin-top: 10%;
+  margin-bottom: 10%;
   justify-content: space-between;
 }
+ul, ol{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.grid{
+  display:grid;
+ 
+}
+body{
+  background-color: whitesmoke;
+  color: #222;
+}
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+header{
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+.header-container{
+  justify-content: space-between;
+  grid-column: 2/3;
+  gap: 4%;
+}
+.logo{
+  font-family: 'Satisfy', cursive;
+}
+.logo-nav{
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+.navbar{
+  justify-content: flex-end;
+}
+.navbar-item{
+  padding: .5rem 1rem;
+  font-size: 2.2rem;
+  border-radius: 10px;
+  margin: 0 .1rem;
+  cursor:pointer;
+}
+.card-wrapper{
+  width: 100%;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 10px;
+  flex-flow: column;
+}
+.card-header{
+  width:100%;
+  padding: .8rem;
+  align-items: center;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-rows: minmax(0, 1fr);
+  height: 56.5px;
+}
+.card-text{
+  width:100%;
+  text-align:left;
+  margin: .5rem 0;
+  font-size: 1.4rem;
+}
 
+.card-title{
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding-left: 1rem;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.card-img-container{
+  width: 100%;
+  height: 465px;
+}
+.card-img{
+  width: 100%;
+  height: 100%;
+}
+.card-icons{
+  gap:1.5rem;
+  width:100%;
+  padding:0 0 .5rem 0;
+  color: black;
+}
+.card-icon i{
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+.card-icon-left{
+  justify-content: start;
+}
+.card-text{
+  width:100%;
+  text-align:left;
+  margin: .5rem 0;
+  font-size: 1.4rem;
+}
+.title-margin{
+  margin-right: .4rem;
+}
+.add-comment-container{
+  width: 100%;
+  gap: 1rem;
+  border-top: 1px solid #ccc;
+  padding-top:.5rem;
+}
+.comments-btn{
+  color: #999;
+  cursor:pointer;
+}
+.comment-container{
+  flex-grow: 1;
+  height:100%;
+}
+.feedpost{
+  block-size: auto;
+  justify-content: center;
+  margin: 0 20% 0 20%;
+}
 .homepage{
   display: flex;
   color: green;
@@ -363,10 +392,30 @@ button:hover {
   font-size: 30px;
 }
 
+
 .mainnav{
   display: flex;
   flex-direction: row;
   height: auto;
   background-color:crimson;
 
+}
+
+.post-image{
+  max-width: 45%;
+  max-height: 45%;
+}
+
+.caption{
+  margin-bottom: 2rem;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.posts{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background: white;
+  justify-content: center;
+  align-items: center
 }
