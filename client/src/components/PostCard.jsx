@@ -45,14 +45,12 @@ export default function PostCard (props) {
         </span>
       </div>
       <div className="card-img-container">
-      <div className="post-body">
         <img src={props.post.imgSrc} alt='post' className='post-image'/>
-      </div>
-        <div className="likesedits">
-        <button className="likes" onClick={updateLikes}>{props.post.numLikes}<br></br>Likes</button>
-        </div>
         <p className='caption'>{props.post.captions}</p>
       </div>
+      <div className="likesedits">
+        <button className="likes" onClick={updateLikes}>{props.post.numLikes}<br></br>Likes</button>
+        </div>
       <div className="trash">
       <button onClick={deletePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Delete</button>
       </div>
