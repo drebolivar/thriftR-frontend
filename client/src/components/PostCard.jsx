@@ -8,7 +8,7 @@ export default function PostCard (props) {
 
   const deletePost = () => {
     Client.delete(`${BASE_URL}/feed/${props.post.id}`)
-    props.setUseEffectToggler(!props.setUseEffectToggler)
+    props.setUseEffectToggler(!props.setUseEffectToggler) 
   }
 
   return props.post ? (
@@ -30,7 +30,7 @@ export default function PostCard (props) {
       <section>
         {props.post.Comments.map((currentComment) => (
           <div key={currentComment.id}>
-            <Comments comment={currentComment}/>
+            <Comments comment={currentComment} userId={props.user.id}/>
           </div>
         ))}
       </section>

@@ -1,14 +1,18 @@
-import axios from "axios"
 import { useState, useEffect } from "react"
 import { BASE_URL } from "../services/api"
+import Client from "../services/api"
 
 export default function Comments (props) {
   let [currentComment, setCurrentComment] = useState(null)
 
   const getComment = async () => {
-    let res = await axios.get(`${BASE_URL}/comment/${props.comment.id}`)
+    let res = await Client.get(`${BASE_URL}/comment/${props.comment.id}`)
     console.log(res.data)
     setCurrentComment(res.data)
+  }
+  const deleteComment = () => {
+    Client.delete(`${BASE_URL}/comment/${currentComment.id}`)
+    props.setUseEffectToggler(!props.setUseEffectToggler) 
   }
 
   useEffect(() => {
@@ -26,6 +30,7 @@ export default function Comments (props) {
         <p>{currentComment.comment}</p>
         <p>{currentComment.numLikes} likes</p>
       </div>
+      <button onClick={deleteComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none'}}>Delete comment</button>
     </div>
   ) : (
     <div>
