@@ -6,7 +6,6 @@ export default function Feed(props) {
   return props.user && props.authenticated ? (
     props.posts ? ( 
       <div className="feedpost">
-        <h1>I am the Feed</h1>
         <section className="postcard-container">
           {props.posts.map((currentPost) => (
             <div key={currentPost.id} className="posts">
