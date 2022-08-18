@@ -368,7 +368,6 @@ header{
 }
 .feedpost{
   margin-left: 25rem;
-  background: grey;
   block-size: auto;
   justify-content: center;
   align-items: center;
@@ -400,7 +399,6 @@ header{
 }
 
 .caption{
-background: grey;
 margin-top: -4rem;
 margin-bottom: -10rem;
 max-width: 80%;
