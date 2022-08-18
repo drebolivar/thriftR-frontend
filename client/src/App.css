@@ -315,12 +315,15 @@ button:hover {
   .logo{
     block-size: -4rem;
   }
+
 	a{
     text-decoration: none;
   }
+
 .likes{
   width: 3rem;
 }
+
 .likesedits{
   margin-top: -2.5rem;
   margin-left: 1rem
@@ -358,4 +361,12 @@ button:hover {
   font-family: 'VT323';
   color: 'green';
   font-size: 30px;
+}
+
+.mainnav{
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background-color:crimson;
+
 }
