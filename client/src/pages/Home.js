@@ -6,7 +6,7 @@ const Home = () => {
   let navigate = useNavigate()
   return (
     <div className="homepage">
-      <div className="welcome">
+      <div className="welcomescreen">
         <img src={LogoASCII} alt="ASCII Logo" />
         <h2>A place to peruse the pre-used!</h2>
         <h3>

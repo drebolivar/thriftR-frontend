@@ -42,6 +42,9 @@
 }
 body{
   background: url(https://i.imgur.com/PmL9yke.jpg);
+  justify-content: center;
+  display: flex;
+  align-items: center;
   font-family: 'DynaPuff', cursive;
 }
 .register, .signin{
@@ -222,12 +225,15 @@ font-family: 'DynaPuff', cursive;
 .logo{
     block-size: -4rem;
   }
+
 	a{
     text-decoration: none;
   }
+
 .likes{
   width: 3rem;
 }
+
 .likesedits{
   margin-top: -2.5rem;
   margin-left: 1rem
@@ -241,6 +247,8 @@ font-family: 'DynaPuff', cursive;
 .postcard-container{
   display: flex;
   flex-direction: column;
+  margin-top: 10%;
+  margin-bottom: 10%;
   justify-content: space-between;
 }
 ul, ol{
@@ -260,6 +268,8 @@ body{
 }
 .flex-container{
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 }
 header{
@@ -361,28 +371,34 @@ header{
   background: grey;
   block-size: auto;
   justify-content: center;
-  display: grid;
   align-items: center;
-  max-width: 50%;
-  max-height: 50%;
+  margin: 0 20% 0 20%;
 }
 .homepage{
   display: flex;
   color: green;
 }
 
-.welcome{
+.welcomescreen{
   background-color: rgb(35, 35, 35);
   border: white 5px dashed;
   font-family: 'VT323';
   color: 'green';
   font-size: 30px;
 }
-.post{
-  max-width: 60%;
-  max-height: 50%;
-  background: pink;
+.mainnav{
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background-color:crimson;
+
 }
+
+.post-image{
+  max-width: 45%;
+  max-height: 45%;
+}
+
 .caption{
 background: grey;
 margin-top: -4rem;
@@ -391,6 +407,17 @@ max-width: 80%;
 max-height: 80%
 }
 .card-img-container{
-  margin: 9rem
+  margin: 9rem;
+  margin-bottom: 2rem;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.posts{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background: white;
+  justify-content: center;
+  align-items: center;
 }
 
