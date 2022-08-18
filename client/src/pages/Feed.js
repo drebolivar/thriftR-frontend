@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 export default function Feed(props) {
   let navigate = useNavigate()
   return props.user && props.authenticated ? (
-    props.posts ? (
+    props.posts ? ( 
       <div className="feedpost">
         <h1>I am the Feed</h1>
         <div class="card"></div>
