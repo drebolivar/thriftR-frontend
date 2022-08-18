@@ -14,6 +14,7 @@ export default function Comments (props) {
     Client.delete(`${BASE_URL}/comment/${currentComment.id}`)
     props.setUseEffectToggler(!props.setUseEffectToggler) 
   }
+  
 
   useEffect(() => {
     getComment()
