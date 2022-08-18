@@ -340,3 +340,8 @@ button:hover {
   height: auto;
 }
 
+.postcard-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

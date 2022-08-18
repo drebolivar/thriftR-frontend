@@ -5,16 +5,20 @@ export default function Feed(props) {
   let navigate = useNavigate()
   return props.user && props.authenticated ? (
     props.posts ? (
-      <div className='feedpost'>
+      <div className="feedpost">
         <h1>I am the Feed</h1>
         <div class="card"></div>
-	<div class="card-content"></div>
-		<header class="card-content_header"></header>
-
-        <section>
+        <div class="card-content"></div>
+        <header class="card-content_header"></header>
+        <section className="postcard-container">
           {props.posts.map((currentPost) => (
             <div key={currentPost.id} className="posts">
-              <PostCard post={currentPost} user={props.user} />
+              <PostCard
+                post={currentPost}
+                user={props.user}
+                useEffectToggler={props.useEffectToggler}
+                setUseEffectToggler={props.setUseEffectToggler}
+              />
             </div>
           ))}
         </section>
@@ -26,10 +30,12 @@ export default function Feed(props) {
     )
   ) : (
     <div className="feederror">
-    <div>
-      <h3 className="protected">Oops! All errors!</h3>
-      <button className="signinfeed" onClick={() => navigate('/signin')}>Sign In</button>
-    </div>
+      <div>
+        <h3 className="protected">Oops! All errors!</h3>
+        <button className="signinfeed" onClick={() => navigate('/signin')}>
+          Sign In
+        </button>
+      </div>
     </div>
   )
 }

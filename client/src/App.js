@@ -130,6 +130,8 @@ function App() {
               user={userData}
               posts={allPosts}
               authenticated={authenticated}
+              useEffectToggler={useEffectToggler}
+              setUseEffectToggler={setUseEffectToggler}
             />
           }
         />

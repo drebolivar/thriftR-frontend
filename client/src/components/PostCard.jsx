@@ -1,8 +1,15 @@
 import Comments from "./Comments"
+import CreateComment from "./CreateComment"
+import Client from "../services/api"
+import { BASE_URL } from "../services/api"
 
 
 export default function PostCard (props) {
 
+  const deletePost = () => {
+    Client.delete(`${BASE_URL}/feed/${props.post.id}`)
+    props.setUseEffectToggler(!props.setUseEffectToggler)
+  }
 
   return props.post ? (
     <div className="post">
@@ -17,7 +24,9 @@ export default function PostCard (props) {
         </div>
         <p className='caption'>{props.post.captions}</p>
       </div>
+      <button onClick={deletePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Delete</button>
       {/* <section>Add comment</section> */}
+      <CreateComment postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
       <section>
         {props.post.Comments.map((currentComment) => (
           <div key={currentComment.id}>
