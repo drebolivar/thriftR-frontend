@@ -20,22 +20,14 @@ export default function PostCard (props) {
   }
 
   return props.post ? (
-    <div className="post">
-        <div className="card-icons flex-container"> 
-        <span className="card-icon card-icon-left"><i className="bi bi-heart"></i></span>
-        <span className="card-icon card-icon-left"><i className="bi bi-chat"></i></span>
-        <span className="card-icon card-icon-left"><i className="bi bi-send"></i></span>
-        <span className="card-icon card-icon-right"><i className="bi bi-bookmark"></i></span>
-      <div className="card-wrapper flex-container">
+    <div className="posts">
       <div className="card-header grid">
         <div className="header-img-container flex-container">
         <img src={props.post.User.profileImg} alt='profilepic' className='profilepicfeed' style={{height: '30px', width: '30px'}}/> 
         <span className="card-title">
         <h2 className='usernamefeed' style={{display: 'inline'}}>{props.post.User.username}</h2>
         </span>
-        </div>
-        </div>
-        </div>
+      </div>
       </div>
       <div className="card-img-container">
       <div className="post-body">

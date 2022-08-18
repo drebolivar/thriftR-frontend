@@ -356,19 +356,15 @@ header{
   border-top: 1px solid #ccc;
   padding-top:.5rem;
 }
-.comments-btn{
-  color: #999;
-  cursor:pointer;
-}
-.comment-container{
-  flex-grow: 1;
-  height:100%;
-}
 .feedpost{
+  margin-left: 25rem;
+  background: grey;
   block-size: auto;
-  background: white;
   justify-content: center;
   display: grid;
+  align-items: center;
+  max-width: 50%;
+  max-height: 50%;
 }
 .homepage{
   display: flex;
@@ -383,12 +379,18 @@ header{
   font-size: 30px;
 }
 .post{
-  max-width: 45%;
-  max-height: 45%;
+  max-width: 60%;
+  max-height: 50%;
+  background: pink;
 }
 .caption{
-  
-  margin-bottom: 2rem;
-  max-width: 80%;
-  max-height: 80%
+background: grey;
+margin-top: -4rem;
+margin-bottom: -10rem;
+max-width: 80%;
+max-height: 80%
 }
+.card-img-container{
+  margin: 9rem
+}
+
