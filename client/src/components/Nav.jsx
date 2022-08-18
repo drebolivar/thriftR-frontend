@@ -4,7 +4,7 @@ import Logo from '../assets/thriftrlogobar.png'
 
 export default function Nav (props) {
 return props.signedIn && props.user ? (
-  <header className="wrapper">
+  <header>
   <nav className="nav">
     <ul className="mainnav">
     <img src={ Logo }/> 
@@ -14,6 +14,7 @@ return props.signedIn && props.user ? (
     <button className="logout icon" onClick={props.handleLogOut}>Log Out</button>
     <img src={ Felix }/> 
     </ul>
+    
     <h1 className="welcome"> Welcome {props.user.username}</h1>
   </nav>
   </header>
