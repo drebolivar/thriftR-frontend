@@ -42,6 +42,9 @@
 }
 body{
   background: url(https://i.imgur.com/PmL9yke.jpg);
+  justify-content: center;
+  display: flex;
+  align-items: center;
   font-family: 'DynaPuff', cursive;
 }
 .register, .signin{
@@ -222,12 +225,15 @@ font-family: 'DynaPuff', cursive;
 .logo{
     block-size: -4rem;
   }
+
 	a{
     text-decoration: none;
   }
+
 .likes{
   width: 3rem;
 }
+
 .likesedits{
   margin-top: -2.5rem;
   margin-left: 1rem
@@ -378,19 +384,29 @@ header{
   color: green;
 }
 
-.welcome{
+.welcomescreen{
   background-color: rgb(35, 35, 35);
   border: white 5px dashed;
   font-family: 'VT323';
   color: 'green';
   font-size: 30px;
 }
+
+
+.mainnav{
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background-color:crimson;
+
+}
+
 .post-image{
   max-width: 45%;
   max-height: 45%;
 }
+
 .caption{
-  
   margin-bottom: 2rem;
   max-width: 80%;
   max-height: 80%;
