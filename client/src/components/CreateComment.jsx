@@ -18,7 +18,6 @@ export default function CreateComment (props) {
 
   const handleCommentChange = (e) => {
     setNewCommentValues({ ...newCommentValues, [e.target.name]: e.target.value })
-    console.log(newCommentValues)
   }
 
   const handleCommentSubmit = async (e) => {

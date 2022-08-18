@@ -13,7 +13,6 @@ export default function Comments (props) {
 
   const getComment = async () => {
     let res = await Client.get(`${BASE_URL}/comment/${props.comment.id}`)
-    console.log(res.data)
     setCurrentComment(res.data)
   }
   const deleteComment = () => {
