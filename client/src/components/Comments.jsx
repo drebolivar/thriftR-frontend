@@ -49,10 +49,10 @@ export default function Comments (props) {
       </div>
       <div className="comment-body">
         <p>{currentComment.comment}</p>
-        <button onClick={updateLikes}>{currentComment.numLikes} likes</button>
+        <button className="likes" onClick={updateLikes}>{currentComment.numLikes} likes</button>
       </div>
-      <button onClick={deleteComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none'}}>Delete comment</button>
-      <button onClick={updateComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none', }}>Update Comment</button>
+      <button className="likes" onClick={deleteComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none'}}>Delete comment</button>
+      <button className="likes" onClick={updateComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none', }}>Update Comment</button>
       <UpdateComment commentId = {currentComment.id} comment={currentComment.comment} visible={visible} setVisible={setVisible} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
     </div>
   ) : (
