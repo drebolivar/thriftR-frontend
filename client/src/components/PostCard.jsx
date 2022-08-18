@@ -32,15 +32,17 @@ export default function PostCard (props) {
         </div>
         <p className='caption'>{props.post.captions}</p>
       </div>
+      
       <button onClick={deletePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Delete</button>
       <button onClick={updatePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Update Post</button>
       <UpdatePost post={props.post} visible={visible} setVisible={setVisible}/>
-      {/* <section>Add comment</section> */}
+
+
       <CreateComment postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
       <section>
         {props.post.Comments.map((currentComment) => (
           <div key={currentComment.id}>
-            <Comments comment={currentComment} userId={props.user.id}/>
+            <Comments comment={currentComment} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
           </div>
         ))}
       </section>
