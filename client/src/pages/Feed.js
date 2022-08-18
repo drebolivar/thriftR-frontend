@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 export default function Feed(props) {
   let navigate = useNavigate()
   return props.user && props.authenticated ? (
-    props.posts ? ( 
+    props.posts ? (
       <div className="feedpost">
         <section className="postcard-container">
           {props.posts.map((currentPost) => (
