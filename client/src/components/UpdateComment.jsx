@@ -19,9 +19,7 @@ export default function UpdateComment (props) {
 
   const handleCommentUpdate = async (e) => {
     e.preventDefault()
-    console.log(updatedComment)
     let res = await Client.put(`${BASE_URL}/comment/${props.commentId}`, updatedComment)
-    console.log(res)
     setUpdatedComment(initialCommentValues)
     props.setUseEffectToggler(!props.useEffectToggler)
     props.setVisible(false)

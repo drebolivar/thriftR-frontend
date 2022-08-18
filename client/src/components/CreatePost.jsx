@@ -17,7 +17,6 @@ export default function CreatePost (props) {
 
   const handlePostChange = (e) => {
     setNewPostValues({ ...newPostValues, [e.target.name]: e.target.value })
-    console.log(newPostValues)
   }
 
   const handlePostSubmit = async (e) => {
