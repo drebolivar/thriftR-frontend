@@ -17,6 +17,7 @@ export default function PostCard (props) {
   const deletePost = () => {
     Client.delete(`${BASE_URL}/feed/${props.post.id}`)
     props.setUseEffectToggler(!props.useEffectToggler) 
+    navigate('/feed')
   }
 
   const updatePost = () => {
