@@ -241,6 +241,8 @@ font-family: 'DynaPuff', cursive;
 .postcard-container{
   display: flex;
   flex-direction: column;
+  margin-top: 10%;
+  margin-bottom: 10%;
   justify-content: space-between;
 }
 ul, ol{
@@ -260,6 +262,8 @@ body{
 }
 .flex-container{
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 }
 header{
@@ -366,9 +370,8 @@ header{
 }
 .feedpost{
   block-size: auto;
-  background: white;
   justify-content: center;
-  display: grid;
+  margin: 0 20% 0 20%;
 }
 .homepage{
   display: flex;
@@ -382,7 +385,7 @@ header{
   color: 'green';
   font-size: 30px;
 }
-.post{
+.post-image{
   max-width: 45%;
   max-height: 45%;
 }
@@ -390,5 +393,13 @@ header{
   
   margin-bottom: 2rem;
   max-width: 80%;
-  max-height: 80%
+  max-height: 80%;
+}
+
+.posts{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background: white;
+  justify-content: center;
+  align-items: center
 }

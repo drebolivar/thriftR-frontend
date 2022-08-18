@@ -2,10 +2,14 @@ import { useState, useEffect } from "react"
 import { BASE_URL } from "../services/api"
 import Client from "../services/api"
 import UpdateComment from "./UpdateComment"
+import { useNavigate } from "react-router-dom"
 
 export default function Comments (props) {
+
+  let navigate = useNavigate()
   let [currentComment, setCurrentComment] = useState(null)
   let [visible, setVisible] = useState(false)
+  let [numOfLikes, setNumOfLikes] = useState({numLikes: props.comment.numLikes})
 
   const updateComment = () => {
     setVisible(true)
@@ -17,9 +21,20 @@ export default function Comments (props) {
   }
   const deleteComment = () => {
     Client.delete(`${BASE_URL}/comment/${currentComment.id}`)
-    props.setUseEffectToggler(!props.setUseEffectToggler) 
+    props.setUseEffectToggler(!props.useEffectToggler) 
   }
 
+  const updateLikes = () => {
+    let likes = currentComment.numLikes
+    // liked ? likes++ : likes--
+    // console.log(likes)
+    // console.log(liked)
+    likes++
+    setNumOfLikes({numLikes: likes})
+    let res = Client.put(`${BASE_URL}/comment/${currentComment.id}`, numOfLikes)
+    props.setUseEffectToggler(!props.useEffectToggler) 
+    navigate('/feed')
+  }
 
   useEffect(() => {
     getComment()
@@ -34,7 +49,7 @@ export default function Comments (props) {
       </div>
       <div className="comment-body">
         <p>{currentComment.comment}</p>
-        <p>{currentComment.numLikes} likes</p>
+        <button onClick={updateLikes}>{currentComment.numLikes} likes</button>
       </div>
       <button onClick={deleteComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none'}}>Delete comment</button>
       <button onClick={updateComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none', }}>Update Comment</button>

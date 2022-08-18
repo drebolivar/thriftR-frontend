@@ -4,45 +4,52 @@ import Client from "../services/api"
 import { BASE_URL } from "../services/api"
 import UpdatePost from "./UpdatePost"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 
 export default function PostCard (props) {
 
+  let navigate = useNavigate()
   let [visible, setVisible] = useState(false)
+  let [numOfLikes, setNumOfLikes] = useState({numLikes: props.post.numLikes})
+  let [liked, setLiked] = useState(false)
 
   const deletePost = () => {
     Client.delete(`${BASE_URL}/feed/${props.post.id}`)
-    props.setUseEffectToggler(!props.setUseEffectToggler) 
+    props.setUseEffectToggler(!props.useEffectToggler) 
   }
 
   const updatePost = () => {
     setVisible(true)
   }
 
+  const updateLikes = () => {
+    let likes = props.post.numLikes
+    // liked ? likes++ : likes--
+    // console.log(likes)
+    // console.log(liked)
+    likes++
+    setNumOfLikes({numLikes: likes})
+    let res = Client.put(`${BASE_URL}/feed/${props.post.id}`, numOfLikes)
+    setLiked(!liked)
+    props.setUseEffectToggler(!props.useEffectToggler) 
+    navigate('/feed')
+  }
+
   return props.post ? (
     <div className="post">
-        <div className="card-icons flex-container"> 
-        <span className="card-icon card-icon-left"><i className="bi bi-heart"></i></span>
-        <span className="card-icon card-icon-left"><i className="bi bi-chat"></i></span>
-        <span className="card-icon card-icon-left"><i className="bi bi-send"></i></span>
-        <span className="card-icon card-icon-right"><i className="bi bi-bookmark"></i></span>
-      <div className="card-wrapper flex-container">
-      <div className="card-header grid">
-        <div className="header-img-container flex-container">
-        <img src={props.post.User.profileImg} alt='profilepic' className='profilepicfeed' style={{height: '30px', width: '30px'}}/> 
+      <div className="header-img-container flex-container">
+        <img src={props.post.User.profileImg} alt='profilepic' className='profilepicfeed' style={{height: '30px', width: '30px'}}/>
         <span className="card-title">
         <h2 className='usernamefeed' style={{display: 'inline'}}>{props.post.User.username}</h2>
         </span>
-        </div>
-        </div>
-        </div>
       </div>
       <div className="card-img-container">
       <div className="post-body">
-        <img src={props.post.imgSrc} alt='post' className="post"/>
-        </div>
+        <img src={props.post.imgSrc} alt='post' className='post-image'/>
+      </div>
         <div className="likesedits">
-        <button className="likes">{props.post.numLikes}<br></br>Likes</button>
+        <button className="likes" onClick={updateLikes}>{props.post.numLikes}<br></br>Likes</button>
         </div>
         <p className='caption'>{props.post.captions}</p>
       </div>
@@ -53,12 +60,14 @@ export default function PostCard (props) {
       <button onClick={updatePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Update Post</button>
       <UpdatePost post={props.post} visible={visible} setVisible={setVisible}/>
       </div>
+
+
       <CreateComment postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
       <section className="card-text">
         {props.post.Comments.map((currentComment) => (
           <div className="comments" key={currentComment.id}>
             <Comments comment={currentComment} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
-            </div>
+          </div>
         ))}
       </section>
     </div>
