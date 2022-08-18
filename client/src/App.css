@@ -43,7 +43,6 @@
 body{
   background: url(https://i.imgur.com/PmL9yke.jpg);
   justify-content: center;
-  display: flex;
   align-items: center;
   font-family: 'DynaPuff', cursive;
 }
