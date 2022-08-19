@@ -27,7 +27,6 @@ export default function CreateComment (props) {
     props.setUseEffectToggler(!props.useEffectToggler)
     navigate('/feed')
   }
-  console.log(props.visible)
 
   return (
     <div style={{display: props.visible ? 'block' : 'none'}}>

@@ -21,15 +21,17 @@ export default function PostCard (props) {
     navigate('/feed')
   }
 
+  //toggles the visibility of the update post form
   const updatePost = () => {
     setVisible(!visible)
   }
 
+  //toggles the visibility of the post comment form
   const showCommentForm = () => {
     setVisibleComment(!makeCommentVisible)
-    console.log(makeCommentVisible)
   }
 
+  //handles the like post button (still a work in progress)
   const updateLikes = () => {
     let likes = props.post.numLikes
     // liked ? likes++ : likes--

@@ -11,20 +11,24 @@ export default function Comments (props) {
   let [visible, setVisible] = useState(false)
   let [numOfLikes, setNumOfLikes] = useState({numLikes: props.comment.numLikes})
 
+  //ability to toggle the update comment form to be visible or not
   const updateComment = () => {
     setVisible(!visible)
   }
 
+  //gets the comment data so that we can properly display user and post
   const getComment = async () => {
     let res = await Client.get(`${BASE_URL}/comment/${props.comment.id}`)
     setCurrentComment(res.data)
   }
+  //deletes comment
   const deleteComment = () => {
     Client.delete(`${BASE_URL}/comment/${currentComment.id}`)
     props.setUseEffectToggler(!props.useEffectToggler) 
     navigate('/feed')
   }
 
+  //function that handles the functionality of the like button (this is a work in progress)
   const updateLikes = () => {
     let likes = currentComment.numLikes
     // liked ? likes++ : likes--
