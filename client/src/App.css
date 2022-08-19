@@ -262,8 +262,8 @@ a{
   background-color:crimson;
 }
 .post-image{
-  max-width: 70%;
-  max-height: 70%;
+  max-width: 50%;
+  max-height: 50%;
 }
 .caption{
 max-width: 80%;
@@ -280,8 +280,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-padding-left: 5px;
-padding-right: 65px;
 margin-bottom: 20%;
 margin-top: 20%;
 border-radius: 10px;
@@ -290,7 +288,7 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
 }
 .header-img-container{
 display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: center;
 align-items: center;
 max-width: 30rem;
@@ -306,13 +304,16 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   object-fit: cover;  
   align-items: flex-start;
 }
+.comment-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
  .comment-body{
+  display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: -40px;
-  margin-bottom: 15px;
-  margin-bottom: 20px;
-  padding: 10px;
   border-radius: 10px;
   background: white;
   box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
@@ -322,11 +323,6 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
- .profilepic-container{
-  display: flex;
-  align-items:flex-end;
-  display: flex;
 }
 .ud-container{
   display:flex;
@@ -349,6 +345,10 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   padding: 40px;
   box-sizing: border-box;
   background: #ecf0f3;
+}
+.usernamefeed{
+  display: flex;
+  flex-direction: row;
 }
 
 
