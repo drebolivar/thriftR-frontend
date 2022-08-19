@@ -4,42 +4,6 @@
   text-align: center;
   font-family: 'DynaPuff', cursive;
 }
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  font-family: 'DynaPuff', cursive;
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 body{
   background: url(https://i.imgur.com/PmL9yke.jpg);
   justify-content: center;
@@ -120,10 +84,10 @@ input {
  button {
   font-family: 'DynaPuff', cursive;
   color: rgb(43, 10, 89);
-  margin-top: 20px;
+  margin-top: 30px;
   background: rgb(70, 192, 115);
-  height: 40px;
-  border-radius: 20px;
+  height: 50px;
+  border-radius: 90px;
   cursor: pointer;
   font-weight: 900;
   box-shadow: 6px 6px 6px rgb(43, 10, 89), -6px -6px 6px rgb(43, 10, 89);
@@ -225,13 +189,13 @@ font-family: 'DynaPuff', cursive;
   }
 
 .likes{
-  width: 3rem;
+  width: 5rem;
   margin: 5px;
 }
 
 .button-container{
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items:flex-end;
   margin-top: -2.5rem;
   margin-left: 1rem
@@ -256,75 +220,15 @@ a{
   text-decoration: none;
   color: inherit;
 }
-/* .grid{
-  display:grid;
- 
-} */
-/* body{
-  background-color: whitesmoke;
-  color: #222;
-} */
-/* .flex-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-} */
-/* .logo{
-  font-family: 'Satisfy', cursive;
-} */
-/* .logo-nav{
-  font-size: 3rem;
-  font-weight: bold;
-  padding: 0 1rem;
-} */
+
 .navbar{
   justify-content: flex-end;
 }
-/* .card-wrapper{
-  width: 100%;
-  border: 1px solid #ccc;
-  background-color: white;
-  border-radius: 10px;
-  flex-flow: column;
-} */
-/* .card-header{
-  width:100%;
-  padding: .8rem;
-  align-items: center;
-  grid-template-columns: 10% 1fr 10%;
-  grid-template-rows: minmax(0, 1fr);
-  height: 56.5px;
-} */
-/* .card-text{
-  width:100%;
-  text-align:left;
-  margin: .5rem 0;
-  font-size: 1.4rem;
-} */
-
-/* .card-title{
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding-left: 1rem;
-  grid-column: 2/3;
-  grid-row: 1/2;
-} */
 
 .card-img-container{
   width: 100%;
   height: 465px;
 }
-/* .card-img{
-  width: 100%;
-  height: 100%;
-} */
-/* .card-icons{
-  gap:1.5rem;
-  width:100%;
-  padding:0 0 .5rem 0;
-  color: black;
-} */
 .card-icon i{
   font-size: 2.4rem;
   cursor: pointer;
@@ -366,11 +270,59 @@ a{
 max-width: 80%;
 max-height: 80%
 }
+.caption-container{
+color: #262626;
+font-size: 14px;
+cursor: pointer;
+font-weight: 600;
+}
 .card-img-container{
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+margin-bottom: 20%;
+margin-top: 20%;
+padding-left: 20%;
+padding: 10px;
+border-radius: 10px;
+background: white;
+box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
+}
+.profilepic{
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;  
+  align-items: flex-start;
+}
+ .comment-body{
+  justify-content: center;
+  align-items: center;
+  margin-left: -40px;
+  margin-bottom: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
+} 
+.postcomment-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+ .profilepic-container{
+  display: flex;
+  align-items:flex-end;
+}
+.ud-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .posts{
   width: 140%;
@@ -390,7 +342,6 @@ align-items: center;
   padding: 40px;
   box-sizing: border-box;
   background: #ecf0f3;
-  box-shadow: 14px 14px 20px rgb(43, 10, 89), -14px -14px 20px rgb(43, 10, 89);
 }
 
 
