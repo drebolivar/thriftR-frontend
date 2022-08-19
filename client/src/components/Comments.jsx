@@ -55,7 +55,7 @@ export default function Comments (props) {
       <div className="comment-body">
         <p>{currentComment.comment}</p>
       <div className="ud-container">
-      <button className="likes" onClick={updateLikes}>{currentComment.numLikes} likes</button>
+      {/* <button className="likes" onClick={updateLikes}>{currentComment.numLikes} likes</button> */}
       <button className="likes" onClick={deleteComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none'}}>Delete comment</button>
       <button className="likes" onClick={updateComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none', }}>Update Comment</button>
       </div>
