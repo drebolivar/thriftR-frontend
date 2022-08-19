@@ -221,9 +221,9 @@ a{
   color: inherit;
 }
 
-/* .navbar{
+.navbar{
   justify-content: flex-end;
-} */
+}
 
 .card-icon i{
   font-size: 2.4rem;
