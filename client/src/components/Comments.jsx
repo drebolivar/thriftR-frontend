@@ -45,16 +45,20 @@ export default function Comments (props) {
   return currentComment ? (
     <div>
       <div className='comment-header'>
-        <img src={currentComment.User.profileImg} alt='profilepic' style={{height: '30px', width: '30px'}}></img>
+        <div className="profilepic-container">
+        <img className='profilepic' src={currentComment.User.profileImg} alt='profilepic' style={{height: '30px', width: '30px'}}></img>
+        </div>
         <h3>{currentComment.User.username}</h3>
       </div>
       <div className="comment-body">
         <p>{currentComment.comment}</p>
         <button className="likes" onClick={updateLikes}>{currentComment.numLikes} likes</button>
       </div>
+      <div className="ud-container">
       <button className="likes" onClick={deleteComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none'}}>Delete comment</button>
       <button className="likes" onClick={updateComment} style= {{display: currentComment.userId === props.userId ? 'block' : 'none', }}>Update Comment</button>
       <UpdateComment commentId = {currentComment.id} comment={currentComment.comment} visible={visible} setVisible={setVisible} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
+      </div>
     </div>
   ) : (
     <div>

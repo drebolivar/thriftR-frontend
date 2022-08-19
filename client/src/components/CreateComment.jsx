@@ -42,9 +42,11 @@ export default function CreateComment (props) {
               required
             />
           </div>
-          <button>
+          <div className='postcomment-container'>
+          <button className='likes'>
             Post Comment
           </button>
+          </div>
         </form>
     </div>
   )
