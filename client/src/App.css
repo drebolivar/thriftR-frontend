@@ -47,7 +47,7 @@ body{
   margin-top: 30px;
 }
 
-label, input, button {
+label, input {
   font-family: 'DynaPuff', cursive;
   display: block;
   width: 100%;
@@ -206,13 +206,13 @@ font-family: 'DynaPuff', cursive;
   cursor: pointer;
   overflow: visible;
 }
-.postcard-container{
+/* .postcard-container{
   display: flex;
   flex-direction: column;
-  /* margin-top: 10%; */
-  /* margin-bottom: 10%; */
-  /* justify-content: space-between; */
-}
+  margin-top: 10%;
+  margin-bottom: 10%;
+  justify-content: space-between;
+} */
 ul, ol{
   list-style: none;
 }
@@ -221,9 +221,9 @@ a{
   color: inherit;
 }
 
-.navbar{
+/* .navbar{
   justify-content: flex-end;
-}
+} */
 
 .card-icon i{
   font-size: 2.4rem;
@@ -264,33 +264,29 @@ a{
   max-width: 75%;
   max-height: 75%;
 }
-.caption{
-max-width: 80%;
-max-height: 80%
-}
+
 .caption-container{
 color: #262626;
 font-size: 14px;
 cursor: pointer;
 font-weight: 600;
 text-align: center;
+width: auto;
 }
 
 .caption {
   text-align: center;
-  margin: 0 auto;
   padding-bottom: 5%;
 }
 
-.card-img-container{
-  width: 40vw;
-  height: auto;
-}
+
 .card-img-container{
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+height: auto;
+width: auto;
 /* margin-bottom: 20%;
 margin-top: 20%; */
 border-radius: 10px;
@@ -300,15 +296,15 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
 .header-img-container{
 display: flex;
 flex-direction: row;
-justify-content: center;
+justify-content: left;
 align-items: center;
 border-radius: 10px;
 background: rgb(224, 179, 224);
 box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
 }
 .profilepic{
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   cursor: pointer;
   object-fit: cover;  
@@ -318,9 +314,15 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   display: flex;
   flex-direction: row;
   align-items: center;
-  height:auto;
-  border: 5px black dotted;
+  justify-content: right;
+  height: auto;
+  border: 2px black solid;
+  display: flex;
+  border-radius: 10px;
+  background: rgb(224, 179, 224);
+  box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
 }
+
  .comment-body{
   display:flex;
   flex-direction: column;
@@ -328,8 +330,9 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   align-items: center;
   margin-bottom: 2rem;
   border-radius: 10px;
-  background: rgb(223, 174, 228);
+  background: rgb(189, 236, 255);
   box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
+  border: 2px black solid
 } 
 .postcomment-container{
   display:flex;
@@ -362,5 +365,9 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   flex-direction: row;
 }
 
-
+.pronav {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
 

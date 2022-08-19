@@ -50,7 +50,7 @@ export default function PostCard (props) {
   return props.post ? (
     <div>
       <div className="header-img-container">
-        <img src={props.post.User.profileImg} alt='profilepic' className='profilepic' style={{height: '30px', width: '30px'}}/>
+        <img src={props.post.User.profileImg} alt='profilepic' className='profilepic'/>
         <h2 className='usernamefeed' style={{display: 'inline'}}>{props.post.User.username}</h2>
       </div>
       <div className="card-img-container">

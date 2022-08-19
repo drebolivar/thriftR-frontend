@@ -7,6 +7,7 @@ return props.signedIn && props.user ? (
   <header>
   <nav className="nav">
     <ul className="mainnav">
+    <img className="pronav" src={props.user.profileImg}/>
     <img src={ Felix }/> 
     <button className="logout icon" onClick={props.handleLogOut}>Log Out</button>
     <Link  to='/newpost'><button className="icon">New Post</button></Link>
