@@ -5,7 +5,7 @@ export default function Profile(props) {
   let navigate = useNavigate()
   return props.user && props.authenticated ? (
     props.posts ? (
-      <div>
+      <div className='feedpost'>
         <section className="postcard-container">
           {props.posts.map((currentPost) => (
             <div key={currentPost.id} className="posts">
