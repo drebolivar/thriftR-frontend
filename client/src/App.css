@@ -220,9 +220,9 @@ a{
   color: inherit;
 }
 
-.navbar{
+/* .navbar{
   justify-content: flex-end;
-}
+} */
 
 .card-img-container{
   width: 100%;
@@ -246,6 +246,7 @@ a{
 .homepage{
   display: flex;
   color: green;
+  justify-content: center;
 }
 
 .welcomescreen{
@@ -257,9 +258,10 @@ a{
 }
 .mainnav{
   display: flex;
-  flex-direction: row;
-  height: auto;
-  background-color:crimson;
+  flex-direction: row-reverse;
+  height: max-content;
+  justify-content: center;
+  /* background-color:crimson; */
 }
 .post-image{
   max-width: 50%;
