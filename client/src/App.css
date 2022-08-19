@@ -341,10 +341,7 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   display: grid;
   font-family: 'DynaPuff', cursive;
   color: rgb(43, 10, 89);
-  width: 130%;
-  height: 100%;
   border-radius: 20px;
-  padding: 40px;
   box-sizing: border-box;
   background: #ecf0f3;
 }
