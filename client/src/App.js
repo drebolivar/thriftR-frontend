@@ -86,9 +86,9 @@ function App() {
         user={userData}
         handleLogOut={handleLogOut}
       />
-      <div className="logo">
+      {/* <div className="logo">
         <img src={logo} alt="logo" />
-      </div>
+      </div> */}
       <Routes>
         <Route
           path="/signin"
