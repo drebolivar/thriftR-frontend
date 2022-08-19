@@ -12,7 +12,7 @@ export default function Comments (props) {
   let [numOfLikes, setNumOfLikes] = useState({numLikes: props.comment.numLikes})
 
   const updateComment = () => {
-    setVisible(true)
+    setVisible(!visible)
   }
 
   const getComment = async () => {

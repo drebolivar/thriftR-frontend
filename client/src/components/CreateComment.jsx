@@ -27,9 +27,10 @@ export default function CreateComment (props) {
     props.setUseEffectToggler(!props.useEffectToggler)
     navigate('/feed')
   }
+  console.log(props.visible)
 
   return (
-    <div>
+    <div style={{display: props.visible ? 'block' : 'none'}}>
       <form className="col" onSubmit={handleCommentSubmit}>
           <div className="input-wrapper">
             <label htmlFor="comment"></label>

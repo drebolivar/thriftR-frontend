@@ -13,6 +13,7 @@ export default function PostCard (props) {
   let [visible, setVisible] = useState(false)
   let [numOfLikes, setNumOfLikes] = useState({numLikes: props.post.numLikes})
   let [liked, setLiked] = useState(false)
+  let [makeCommentVisible, setVisibleComment] = useState(false)
 
   const deletePost = () => {
     Client.delete(`${BASE_URL}/feed/${props.post.id}`)
@@ -21,7 +22,12 @@ export default function PostCard (props) {
   }
 
   const updatePost = () => {
-    setVisible(true)
+    setVisible(!visible)
+  }
+
+  const showCommentForm = () => {
+    setVisibleComment(!makeCommentVisible)
+    console.log(makeCommentVisible)
   }
 
   const updateLikes = () => {
@@ -53,15 +59,13 @@ export default function PostCard (props) {
         <button className="likes" onClick={updateLikes}>{props.post.numLikes}<br></br>Likes</button>
       </div>
       <div className="button-container">
-     <button className="likes"onClick={deletePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Delete</button>
-      
-      <button className="likes"src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" onClick={updatePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Update Post</button>
+        <button className="likes"onClick={deletePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Delete</button>
+        <button className="likes"src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" onClick={updatePost} style= {{display: props.post.authorId === props.user.id ? 'block' : 'none'}}>Update Post</button>
+        <button className="likes" onClick={showCommentForm}>Comment</button>
       </div>
       <UpdatePost post={props.post} visible={visible} setVisible={setVisible}/>
     
-
-
-      <CreateComment postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
+      <CreateComment  visible={makeCommentVisible} postId={props.post.id} userId={props.user.id} useEffectToggler={props.useEffectToggler} setUseEffectToggler={props.setUseEffectToggler}/>
       <section className="card-text">
         {props.post.Comments.map((currentComment) => (
           <div className="comments" key={currentComment.id}>
