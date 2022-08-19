@@ -33,6 +33,8 @@ export default function PostCard (props) {
     setNumOfLikes({numLikes: likes})
     let res = Client.put(`${BASE_URL}/feed/${props.post.id}`, numOfLikes)
     setLiked(!liked)
+    console.log(likes)
+    console.log(numOfLikes)
     props.setUseEffectToggler(!props.useEffectToggler) 
     navigate('/feed')
   }
