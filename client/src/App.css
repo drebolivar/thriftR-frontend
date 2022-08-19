@@ -303,7 +303,7 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 border-radius: 10px;
-background: white;
+background: rgb(224, 179, 224);
 box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
 }
 .profilepic{
@@ -324,8 +324,9 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
   border-radius: 10px;
-  background: white;
+  background: rgb(223, 174, 228);
   box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
 } 
 .postcomment-container{
@@ -352,9 +353,7 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   width: auto;
   height: auto;
   border-radius: 20px;
-  padding: 40px;
   box-sizing: border-box;
-  background: #ecf0f3;
 }
 .usernamefeed{
   display: flex;
