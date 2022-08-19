@@ -23,6 +23,7 @@ function App() {
   const [userData, setUserData] = useState(null)
   const [allPosts, setAllPosts] = useState(null)
   const [allUserPosts, setAllUserPosts] = useState([])
+  //useEffectToggler is used as an artificial way to re-fire useeffect to gather updated data
   const [useEffectToggler, setUseEffectToggler] = useState(false)
   const [tokenString, setTokenString] = useState('')
 
@@ -41,15 +42,16 @@ function App() {
     })
     setAllPosts(posts)
   }
+
+  //Reset all auth related state and clear localStorage
   const handleLogOut = () => {
-    //Reset all auth related state and clear localStorage
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
     navigate('/')
   }
 
-  //checks to see if there is a valid token in the local storage and if so sets user to the token
+  //checks to see if there is a valid token in the local storage and if so sets user to the token payload
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
@@ -69,8 +71,10 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token')
     setTokenString(token)
+    //checks to see if there is a token present in local storage
     if (token) {
       checkToken()
+      //waits to gather data until user is set, this prevents various errors of API calls with undefined data
       if (user) {
         getUserData()
         getAllPosts()
@@ -86,9 +90,6 @@ function App() {
         user={userData}
         handleLogOut={handleLogOut}
       />
-      {/* <div className="logo">
-        <img src={logo} alt="logo" />
-      </div> */}
       <Routes>
         <Route
           path="/signin"
