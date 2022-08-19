@@ -324,6 +324,7 @@ box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
   border-radius: 10px;
   background: white;
   box-shadow: 1px 1px 1px rgb(43, 10, 89), -1px -1px 1px rgb(43, 10, 89);
